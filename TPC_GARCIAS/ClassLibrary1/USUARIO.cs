@@ -10,11 +10,7 @@ namespace DOMINIO
     {
         int intIDUser { get; set; }
         string strUsuario { get; set; }
-        DateTime datFechaAlta { get; set; }
-        DateTime datFechaBaja { get; set; }
-        DateTime datUltMod { get; set; }
-        int intBloqueo { get; set; }
         string strClave { get; set; }
-        int intIdPerfil { get; set; }
+        int intBloqueo { get; set; }
     }
 }

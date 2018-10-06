@@ -47,7 +47,6 @@
     <Compile Include="INSUMOS.cs" />
     <Compile Include="MODULOS.cs" />
     <Compile Include="PedidoVta.cs" />
-    <Compile Include="PERFILES.cs" />
     <Compile Include="PERSONA.cs" />
     <Compile Include="PRODUCTO.cs" />
     <Compile Include="ProdVenta.cs" />

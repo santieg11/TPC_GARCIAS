@@ -10,6 +10,5 @@ namespace DOMINIO
     {
         int intIDModulos { get; set; }
         string strDescripcion { get; set; }
-        int intOpciones { get; set; }
     }
 }

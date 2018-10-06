@@ -11,5 +11,9 @@ namespace DOMINIO
         string strDescripcion { get; set; }
         float fltValorUltMov { get; set; }
         DateTime datFechaUltMov { get; set; }
+        DateTime datFechaAlta { get; set; }
+        DateTime datFechaBaja { get; set; }
+        DateTime datUltMod { get; set; }
+        int intStatus { get; set; }
     }
 }

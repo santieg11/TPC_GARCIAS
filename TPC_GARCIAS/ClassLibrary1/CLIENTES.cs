@@ -11,5 +11,6 @@ namespace DOMINIO
         int intIDCliente { get; set; }
         string strCuit { get; set; }
         int intIdContacto { get; set; }
+        
     }
 }

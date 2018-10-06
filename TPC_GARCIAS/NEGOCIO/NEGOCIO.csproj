@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReportePedidos.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ClassLibrary1\DOMINIO.csproj">
@@ -50,6 +49,7 @@
       <Name>DOMINIO</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="script_DB\CREACION_GARCIAS_DB.sql" />
   </ItemGroup>

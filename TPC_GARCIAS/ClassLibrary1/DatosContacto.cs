@@ -12,6 +12,6 @@ namespace DOMINIO
         string strEmail { get; set; }
         int intTelefono { get; set; }
         string strDireccion { get; set; }
-        int intClienteProveedor { get; set; }
+        int intClienteProveedor { get; set; } // 1 = CLIENTE - 2 = PROVEEDOR
     }
 }

@@ -9,5 +9,9 @@ namespace DOMINIO
     public class PERSONA
     {
         public string strNombre { get; set; }
+        DateTime datFechaAlta { get; set; }
+        DateTime datFechaBaja { get; set; }
+        DateTime datUltMod { get; set; }
+        int intStatus { get; set; }
     }
 }
