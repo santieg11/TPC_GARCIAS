@@ -66,6 +66,7 @@
             this.Controls.Add(this.dgvListadoCompras);
             this.Name = "frmListadoCompras";
             this.Text = "frmListadoCompras";
+            this.Load += new System.EventHandler(this.frmListadoCompras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoCompras)).EndInit();
             this.ResumeLayout(false);
 

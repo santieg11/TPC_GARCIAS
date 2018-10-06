@@ -8,10 +8,11 @@ namespace DOMINIO
 {
     public class COMPRAS
     {
-        int intIDCompra { get; set; }
-        int intIDProv { get; set; }
-        DateTime datFechaCompra { get; set; }
-        string strNroFactura { get; set; }
-        float fltValorCompra { get; set; }
+        public int intIDCompra { get; set; }
+        public int intIDProv { get; set; }
+        public string strNomProv { get; set; }
+        public DateTime datFechaCompra { get; set; }
+        public decimal dmlValorCompra { get; set; }
+        public string strNroFactura { get; set; }
     }
 }
