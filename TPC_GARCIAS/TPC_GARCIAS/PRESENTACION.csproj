@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MaterialSkin">
+      <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,11 +49,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmABMProv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmABMProv.Designer.cs">
+      <DependentUpon>frmABMProv.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmListadoCompras.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmListadoCompras.Designer.cs">
       <DependentUpon>frmListadoCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAltaProv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAltaProv.Designer.cs">
+      <DependentUpon>frmAltaProv.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMenu.cs">
       <SubType>Form</SubType>
@@ -60,8 +75,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmABMProv.resx">
+      <DependentUpon>frmABMProv.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmListadoCompras.resx">
       <DependentUpon>frmListadoCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAltaProv.resx">
+      <DependentUpon>frmAltaProv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>

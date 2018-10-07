@@ -8,12 +8,12 @@ namespace DOMINIO
 {
     public class PRODUCTO
     {
-        string strDescripcion { get; set; }
-        float fltValorUltMov { get; set; }
-        DateTime datFechaUltMov { get; set; }
-        DateTime datFechaAlta { get; set; }
-        DateTime datFechaBaja { get; set; }
-        DateTime datUltMod { get; set; }
-        int intStatus { get; set; }
+        public string strDescripcion { get; set; }
+        public float fltValorUltMov { get; set; }
+        public DateTime datFechaUltMov { get; set; }
+        public DateTime datFechaAlta { get; set; }
+        public DateTime datFechaBaja { get; set; }
+        public DateTime datUltMod { get; set; }
+        public int intStatus { get; set; }
     }
 }

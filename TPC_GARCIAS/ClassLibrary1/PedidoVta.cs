@@ -8,15 +8,15 @@ namespace DOMINIO
 {
     public class PedidoVta : VENTAS
     {
-        int intNroPedido { get; set; }
-        DateTime datEntregaAcordada { get; set; }
-        DateTime datEntregaReal { get; set; }
-        int intCodInsumo { get; set; }
-        int intCantInsumo { get; set; }
-        float fltValorVta { get; set; }
-        int intStatus { get; set; }
-        string strNroFactura { get; set; }
-        DateTime datFechaFactura { get; set; }
-        float fltMontoFactura { get; set; }
+        public int intNroPedido { get; set; }
+        public DateTime datEntregaAcordada { get; set; }
+        public DateTime datEntregaReal { get; set; }
+        public int intCodInsumo { get; set; }
+        public int intCantInsumo { get; set; }
+        public float fltValorVta { get; set; }
+        public int intStatusPedido { get; set; }
+        public string strNroFactura { get; set; }
+        public DateTime datFechaFactura { get; set; }
+        public float fltMontoFactura { get; set; }
     }
 }

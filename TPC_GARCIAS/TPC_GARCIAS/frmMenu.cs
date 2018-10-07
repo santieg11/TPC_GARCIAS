@@ -30,5 +30,12 @@ namespace TPC_GARCIAS
             this.Close();
 
         }
+
+        private void btnABMProveedores_Click(object sender, EventArgs e)
+        {
+            frmABMProv ventana = new frmABMProv();
+            ventana.Show();
+            this.Close();
+        }
     }
 }

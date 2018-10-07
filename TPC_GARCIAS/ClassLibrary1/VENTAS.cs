@@ -8,12 +8,12 @@ namespace DOMINIO
 {
     public class VENTAS
     {
-        int intIDVenta { get; set; }
-        DateTime datFechaVta { get; set; }
-        int intIDCliente { get; set; }
-        int intIDProducto { get; set; }
-        int intCantVta { get; set; }
-        int intStatus { get; set; }
-        int intIDUsuario { get; set; }
+        public int intIDVenta { get; set; }
+        public DateTime datFechaVta { get; set; }
+        public int intIDCliente { get; set; }
+        public int intIDProducto { get; set; }
+        public int intCantVta { get; set; }
+        public int intStatus { get; set; }
+        public int intIDUsuario { get; set; }
     }
 }

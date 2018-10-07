@@ -10,6 +10,7 @@ namespace NEGOCIO
 {
     public class ComprasNegocio
     {
+        /*
         public IList<COMPRAS> listar()
         {
             //conexion
@@ -58,6 +59,54 @@ namespace NEGOCIO
                 //lector.Close();
                 lector = null;
                 conexion.Close();
+            }
+
+
+        }
+        */
+
+        public IList<COMPRAS> listar()
+        {
+
+            clsConexiones conexion = new clsConexiones();
+                        
+            IList<COMPRAS> lista = new List<COMPRAS>();
+            COMPRAS aux;
+
+            try
+            {
+                conexion = new clsConexiones();
+                conexion.setearConsulta("SELECT *, P.NOMBRE FROM COMPRAS AS C left join PROVEEDORES AS P ON P.IDPROV = C.CODPROV");
+                conexion.abrirConexion();
+                conexion.ejecutarConsulta();
+                
+                while (conexion.Lector.Read())
+                {
+                    aux = new COMPRAS();
+
+                    aux.intIDCompra = (int)conexion.Lector["IDCOMPRA"];
+                    aux.intIDProv = (int)conexion.Lector["CODPROV"];
+                    aux.strNomProv = (string)conexion.Lector["NOMBRE"];
+                    aux.datFechaCompra = (DateTime)conexion.Lector["FECHA_COMPRA"];
+                    aux.dmlValorCompra = decimal.Round((decimal)conexion.Lector["VALOR_COMPRA"], 2);
+                    aux.strNroFactura = (string)conexion.Lector["NRODOCUMENTO"];
+
+                    lista.Add(aux);
+                }
+
+                return lista;
+
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Lector.Close();
+                conexion.cerrarConexion();
+
             }
 
 

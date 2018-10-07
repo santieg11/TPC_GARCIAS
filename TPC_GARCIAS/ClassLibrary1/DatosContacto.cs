@@ -8,10 +8,10 @@ namespace DOMINIO
 {
     public class DatosContacto : PERSONA
     {
-        int intIDContacto { get; set; }
-        string strEmail { get; set; }
-        int intTelefono { get; set; }
-        string strDireccion { get; set; }
-        int intClienteProveedor { get; set; } // 1 = CLIENTE - 2 = PROVEEDOR
+        public int intIDContacto { get; set; }
+        public string strEmail { get; set; }
+        public int intTelefono { get; set; }
+        public string strDireccion { get; set; }
+        public int intClienteProveedor { get; set; } // 1 = CLIENTE - 2 = PROVEEDOR
     }
 }

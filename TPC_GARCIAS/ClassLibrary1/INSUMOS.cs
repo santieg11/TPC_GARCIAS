@@ -8,6 +8,6 @@ namespace DOMINIO
 {
     public class INSUMOS : PRODUCTO
     {
-        int intCodInsumo { get; set; }
+        public int intCodInsumo { get; set; }
     }
 }

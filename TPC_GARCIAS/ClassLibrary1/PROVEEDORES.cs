@@ -8,8 +8,7 @@ namespace DOMINIO
 {
     public class PROVEEDORES : PERSONA
     {
-        int intIDProv { get; set; }
-        string strCuit { get; set; }
-        int intIdContacto { get; set; }
+        public int intIDProv { get; set; }
+
     }
 }

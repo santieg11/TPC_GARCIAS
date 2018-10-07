@@ -8,9 +8,9 @@ namespace DOMINIO
 {
     public class USUARIO : PERSONA
     {
-        int intIDUser { get; set; }
-        string strUsuario { get; set; }
-        string strClave { get; set; }
-        int intBloqueo { get; set; }
+        public int intIDUser { get; set; }
+        public string strUsuario { get; set; }
+        public string strClave { get; set; }
+        public int intBloqueo { get; set; }
     }
 }

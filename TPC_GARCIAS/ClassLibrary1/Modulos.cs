@@ -8,7 +8,7 @@ namespace DOMINIO
 {
     public class MODULOS
     {
-        int intIDModulos { get; set; }
-        string strDescripcion { get; set; }
+        public int intIDModulos { get; set; }
+        public string strDescripcion { get; set; }
     }
 }
