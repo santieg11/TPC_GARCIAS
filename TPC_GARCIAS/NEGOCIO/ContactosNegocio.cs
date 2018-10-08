@@ -8,46 +8,33 @@ using System.Data.SqlClient;
 
 namespace NEGOCIO
 {
-    public class ProveedoresNegocio
+    public class ContactosNegocio
     {
         
-        public IList<PROVEEDORES> listar()
+        public IList<DatosContacto> listar()
         {
 
             clsConexiones conexion = new clsConexiones();
                         
-            IList<PROVEEDORES> lista = new List<PROVEEDORES>();
-            PROVEEDORES aux;
+            IList<DatosContacto> lista = new List<DatosContacto>();
+            DatosContacto aux;
 
             try
             {
                 conexion = new clsConexiones();
-                conexion.setearConsulta("SELECT * from PROVEEDORES");
+                conexion.setearConsulta("SELECT * from CONTACTOS");
                 conexion.abrirConexion();
                 conexion.ejecutarConsulta();
                 
                 while (conexion.Lector.Read())
                 {
-                    aux = new PROVEEDORES();
+                    aux = new DatosContacto();
                                           
-                    aux.intIDProv = (int)conexion.Lector["IDPROV"];
-                    aux.strNombre = (string) conexion.Lector["NOMBRE"];
-                    aux.strCuit = (string)conexion.Lector["CUIT"];
-                    aux.intIdContacto = (int)conexion.Lector["IDCONTACTO"];
-                    aux.datFechaAlta = (DateTime) conexion.Lector["FECHA_ALTA"];
-
-                    if (conexion.Lector["FECHA_BAJA"] == DBNull.Value)
-                        aux.datFechaBaja = null;
-                    else
-                        aux.datFechaBaja = (DateTime)conexion.Lector["FECHA_BAJA"];
-
-                    if (conexion.Lector["ULT_MOD"] == DBNull.Value)
-                        aux.datUltMod = null;
-                    else
-                        aux.datUltMod = (DateTime)conexion.Lector["ULT_MOD"];
-
-                    aux.intStatus = (int)conexion.Lector["STATUS"];
-                    
+                    aux.intIDContacto = (int)conexion.Lector["IDCONTACTO"];
+                    aux.strNombre = (string)conexion.Lector["NOMBRE"];
+                    aux.strEmail = (string) conexion.Lector["EMAIL"];
+                    aux.intTelefono = (int)conexion.Lector["TELEFONO"];
+                    aux.strDireccion = (string)conexion.Lector["DIRECCION"];
              
                     lista.Add(aux);
                 }
@@ -69,6 +56,44 @@ namespace NEGOCIO
 
 
         }
+
+        public DatosContacto consultar(int id)
+        {
+            DatosContacto aux;
+            clsConexiones conexion = new clsConexiones();
+            try
+            {
+                conexion.setearConsulta("SELECT * from CONTACTOS where IDCONTACTO=@id");
+                conexion.Comando.Parameters.Clear();
+                conexion.Comando.Parameters.AddWithValue("@id", id);
+                conexion.abrirConexion();
+                conexion.ejecutarConsulta();
+
+                aux = new DatosContacto();
+
+                conexion.Lector.Read();
+
+                aux.intIDContacto = (int)conexion.Lector["IDCONTACTO"];
+                aux.strNombre = (string)conexion.Lector["NOMBRE"];
+                aux.strEmail = (string)conexion.Lector["EMAIL"];
+                aux.intTelefono = (int)conexion.Lector["TELEFONO"];
+                aux.strDireccion = (string)conexion.Lector["DIRECCION"];
+
+                return aux;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                conexion.Lector.Close();
+                conexion.cerrarConexion();
+
+            }
+        }
+        
 
         /*
         public void modificar(PROVEEDORES propiedad)

@@ -55,6 +55,12 @@
     <Compile Include="frmABMProv.Designer.cs">
       <DependentUpon>frmABMProv.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmContactos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmContactos.Designer.cs">
+      <DependentUpon>frmContactos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmListadoCompras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmABMProv.resx">
       <DependentUpon>frmABMProv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmContactos.resx">
+      <DependentUpon>frmContactos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListadoCompras.resx">
       <DependentUpon>frmListadoCompras.cs</DependentUpon>

@@ -12,6 +12,5 @@ namespace DOMINIO
         public string strEmail { get; set; }
         public int intTelefono { get; set; }
         public string strDireccion { get; set; }
-        public int intClienteProveedor { get; set; } // 1 = CLIENTE - 2 = PROVEEDOR
     }
 }

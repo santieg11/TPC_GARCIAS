@@ -36,16 +36,25 @@ namespace TPC_GARCIAS
             ProveedoresNegocio prov = new ProveedoresNegocio();
             try
             {
-                dgvListadoCompras.DataSource = prov.listar();
-                dgvListadoCompras.Columns[0].HeaderText = "ID Prov";
-                dgvListadoCompras.Columns[1].HeaderText = "Nombre";
-                dgvListadoCompras.Columns[2].HeaderText = "CUIT";
-                dgvListadoCompras.Columns[3].HeaderText = "ID Contacto";
-                dgvListadoCompras.Columns[4].HeaderText = "Fecha Alta";
-                dgvListadoCompras.Columns[5].HeaderText = "Fecha Baja";
-                dgvListadoCompras.Columns[6].HeaderText = "Ult Modificacion";
-                dgvListadoCompras.Columns[7].HeaderText = "Status";
-                
+                dgvProveedores.DataSource = prov.listar();
+                dgvProveedores.Columns[0].HeaderText = "ID Prov";
+                dgvProveedores.Columns[1].HeaderText = "Nombre";
+                dgvProveedores.Columns[2].HeaderText = "CUIT";
+                dgvProveedores.Columns[3].HeaderText = "ID Contacto";
+                dgvProveedores.Columns[4].HeaderText = "Fecha Alta";
+                dgvProveedores.Columns[5].HeaderText = "Fecha Baja";
+                dgvProveedores.Columns[6].HeaderText = "Ult Modificacion";
+                dgvProveedores.Columns[7].HeaderText = "Status";
+
+                dgvProveedores.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvProveedores.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvProveedores.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvProveedores.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvProveedores.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvProveedores.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvProveedores.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvProveedores.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
             }
             catch (Exception ex)
             {
@@ -69,6 +78,18 @@ namespace TPC_GARCIAS
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void btnVerContacto_Click(object sender, EventArgs e)
+        {
+
+            PROVEEDORES id;
+            id = (PROVEEDORES)dgvProveedores.CurrentRow.DataBoundItem;
+
+            frmContactos consulta = new frmContactos(id.intIdContacto);
+
+            consulta.ShowDialog();
+
         }
     }
 }
