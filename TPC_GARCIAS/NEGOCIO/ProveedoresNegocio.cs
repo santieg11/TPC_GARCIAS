@@ -95,20 +95,18 @@ namespace NEGOCIO
         */
         public void alta(PROVEEDORES nuevo)
         {
-            clsConexiones conexion = null;
+            clsConexiones conexion = new clsConexiones();
             try
             {
-                conexion = new clsConexiones();
                 conexion.setearConsulta("insert into PROVEEDORES (NOMBRE, CUIT, IDCONTACTO, FECHA_ALTA, FECHA_BAJA, ULT_MOD, STATUS) values (@NOMBRE, @CUIT, @IDCONTACTO, @FECHA_ALTA, @FECHA_BAJA, @ULT_MOD, 1)");
                 conexion.Comando.Parameters.Clear();
                 conexion.Comando.Parameters.AddWithValue("@NOMBRE", nuevo.strNombre);
                 conexion.Comando.Parameters.AddWithValue("@CUIT", nuevo.strCuit);
                 conexion.Comando.Parameters.AddWithValue("@IDCONTACTO", nuevo.intIdContacto);
                 conexion.Comando.Parameters.AddWithValue("@FECHA_ALTA", DateTime.Now);
-                conexion.Comando.Parameters.AddWithValue("@FECHA_BAJA", null);
+                conexion.Comando.Parameters.AddWithValue("@FECHA_BAJA", DBNull.Value);
                 conexion.Comando.Parameters.AddWithValue("@ULT_MOD", DateTime.Now);
                 
-
                 conexion.abrirConexion();
                 conexion.ejecutarAccion();
             }

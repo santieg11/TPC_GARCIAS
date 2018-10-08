@@ -11,52 +11,6 @@ namespace NEGOCIO
     public class ContactosNegocio
     {
         
-        public IList<DatosContacto> listar()
-        {
-
-            clsConexiones conexion = new clsConexiones();
-                        
-            IList<DatosContacto> lista = new List<DatosContacto>();
-            DatosContacto aux;
-
-            try
-            {
-                conexion = new clsConexiones();
-                conexion.setearConsulta("SELECT * from CONTACTOS");
-                conexion.abrirConexion();
-                conexion.ejecutarConsulta();
-                
-                while (conexion.Lector.Read())
-                {
-                    aux = new DatosContacto();
-                                          
-                    aux.intIDContacto = (int)conexion.Lector["IDCONTACTO"];
-                    aux.strNombre = (string)conexion.Lector["NOMBRE"];
-                    aux.strEmail = (string) conexion.Lector["EMAIL"];
-                    aux.intTelefono = (int)conexion.Lector["TELEFONO"];
-                    aux.strDireccion = (string)conexion.Lector["DIRECCION"];
-             
-                    lista.Add(aux);
-                }
-
-                return lista;
-                
-            }
-
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                conexion.Lector.Close();
-                conexion.cerrarConexion();
-
-            }
-
-
-        }
-
         public DatosContacto consultar(int id)
         {
             DatosContacto aux;
@@ -93,49 +47,90 @@ namespace NEGOCIO
 
             }
         }
-        
 
-        /*
-        public void modificar(PROVEEDORES propiedad)
+        public int consultarID()
         {
-            clsConexiones conexion;
+            int aux;
+            clsConexiones conexion = new clsConexiones();
             try
             {
-                conexion = new clsConexiones();
-                conexion.setearConsulta("update PROVEEDORES set DescripcionGeneral = @descripcion, SuperficieCubierta = @supCubierta, SuperficieDescubierta = @supDescubierta Where IdPropiedad = @id");
-                conexion.Comando.Parameters.Clear();
-                conexion.Comando.Parameters.AddWithValue("@descripcion", propiedad.DescripcionGeneral);
-                conexion.Comando.Parameters.AddWithValue("@supCubierta", propiedad.SuperficieCubierta);
-                conexion.Comando.Parameters.AddWithValue("@supDescubierta", propiedad.SuperficieDescubierta);
-                conexion.Comando.Parameters.AddWithValue("@id", propiedad.Id);
+                conexion.setearConsulta("SELECT TOP 1 IDCONTACTO from CONTACTOS ORDER BY IDCONTACTO DESC");
 
                 conexion.abrirConexion();
-                conexion.ejecutarAccion();
+                conexion.ejecutarConsulta();
+
+                conexion.Lector.Read();
+
+                aux = (int)conexion.Lector["IDCONTACTO"];
+
+                return aux;
             }
             catch (Exception ex)
             {
+
                 throw ex;
             }
+            finally
+            {
+                conexion.Lector.Close();
+                conexion.cerrarConexion();
+
+            }
         }
-        */
-        public void alta(PROVEEDORES nuevo)
+
+
+        public void modificar(DatosContacto contacto)
         {
-            clsConexiones conexion = null;
+   
+            clsConexiones conexion = new clsConexiones();
             try
             {
-                conexion = new clsConexiones();
-                conexion.setearConsulta("insert into PROVEEDORES (NOMBRE, CUIT, IDCONTACTO, FECHA_ALTA, FECHA_BAJA, ULT_MOD, STATUS) values (@NOMBRE, @CUIT, @IDCONTACTO, @FECHA_ALTA, @FECHA_BAJA, @ULT_MOD, 1)");
+                conexion.setearConsulta("UPDATE CONTACTOS SET NOMBRE=@NOMBRE, EMAIL=@EMAIL, TELEFONO=@TELEFONO, DIRECCION=@DIRECCION WHERE IDCONTACTO=@ID ");
+
                 conexion.Comando.Parameters.Clear();
-                conexion.Comando.Parameters.AddWithValue("@NOMBRE", nuevo.strNombre);
-                conexion.Comando.Parameters.AddWithValue("@CUIT", nuevo.strCuit);
-                conexion.Comando.Parameters.AddWithValue("@IDCONTACTO", nuevo.intIdContacto);
-                conexion.Comando.Parameters.AddWithValue("@FECHA_ALTA", DateTime.Now);
-                conexion.Comando.Parameters.AddWithValue("@FECHA_BAJA", null);
-                conexion.Comando.Parameters.AddWithValue("@ULT_MOD", DateTime.Now);
-                
+                conexion.Comando.Parameters.AddWithValue("@ID", contacto.intIDContacto);
+                conexion.Comando.Parameters.AddWithValue("@NOMBRE", contacto.strNombre);
+                conexion.Comando.Parameters.AddWithValue("@EMAIL", contacto.strEmail);
+                conexion.Comando.Parameters.AddWithValue("@TELEFONO", contacto.intTelefono);
+                conexion.Comando.Parameters.AddWithValue("@DIRECCION", contacto.strDireccion);
 
                 conexion.abrirConexion();
                 conexion.ejecutarAccion();
+                             
+                
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                
+                conexion.cerrarConexion();
+                
+
+            }
+        }
+
+        public void alta(DatosContacto nuevo)
+        {
+            clsConexiones conexion = new clsConexiones();
+
+            try
+            {
+                conexion.setearConsulta("insert into CONTACTOS (NOMBRE, EMAIL, TELEFONO, DIRECCION) values (@NOMBRE, @EMAIL, @TELEFONO, @DIRECCION)");
+                conexion.Comando.Parameters.Clear();
+                conexion.Comando.Parameters.AddWithValue("@NOMBRE", nuevo.strNombre);
+                conexion.Comando.Parameters.AddWithValue("@EMAIL", nuevo.strEmail);
+                conexion.Comando.Parameters.AddWithValue("@TELEFONO", nuevo.intTelefono);
+                conexion.Comando.Parameters.AddWithValue("@DIRECCION", nuevo.strDireccion);
+   
+                conexion.abrirConexion();
+                conexion.ejecutarAccion();
+                
+
             }
             catch (Exception ex)
             {

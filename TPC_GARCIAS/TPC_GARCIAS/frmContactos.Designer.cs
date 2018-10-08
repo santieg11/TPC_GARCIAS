@@ -125,6 +125,7 @@
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.Size = new System.Drawing.Size(335, 23);
             this.txbEmail.TabIndex = 10;
+            this.txbEmail.Validated += new System.EventHandler(this.txbEmail_Validated);
             // 
             // txbDireccion
             // 
@@ -206,8 +207,9 @@
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 40);
             this.btnAceptar.TabIndex = 5;
-            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.Text = "Aceptar Cambios";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // frmContactos
             // 
@@ -222,7 +224,7 @@
             this.Controls.Add(this.btnVolver);
             this.MinimumSize = new System.Drawing.Size(357, 324);
             this.Name = "frmContactos";
-            this.Text = "Alta Proveedor";
+            this.Text = "Datos Contacto";
             this.grbDatosContacto.ResumeLayout(false);
             this.grbDatosContacto.PerformLayout();
             this.ResumeLayout(false);

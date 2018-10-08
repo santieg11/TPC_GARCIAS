@@ -33,16 +33,17 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCUIT = new System.Windows.Forms.Label();
             this.grbDatosContacto = new System.Windows.Forms.GroupBox();
-            this.lblNomContacto = new System.Windows.Forms.Label();
-            this.lblTelefono = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
+            this.txbEmail = new System.Windows.Forms.TextBox();
+            this.txbDireccion = new System.Windows.Forms.TextBox();
+            this.txbNomContacto = new System.Windows.Forms.TextBox();
+            this.mtbTelefono = new System.Windows.Forms.MaskedTextBox();
             this.lblDireccion = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblTelefono = new System.Windows.Forms.Label();
+            this.lblNomContacto = new System.Windows.Forms.Label();
             this.txbNomProv = new System.Windows.Forms.TextBox();
             this.mtbCUIT = new System.Windows.Forms.MaskedTextBox();
-            this.mtbTelefono = new System.Windows.Forms.MaskedTextBox();
-            this.txbNomContacto = new System.Windows.Forms.TextBox();
-            this.txbDireccion = new System.Windows.Forms.TextBox();
-            this.txbEmail = new System.Windows.Forms.TextBox();
+            this.btnAtras = new System.Windows.Forms.Button();
             this.grbDatosContacto.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +53,7 @@
             this.btnCancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnCancelar.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(200, 233);
+            this.btnCancelar.Location = new System.Drawing.Point(139, 233);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 40);
             this.btnCancelar.TabIndex = 0;
@@ -66,12 +67,13 @@
             this.btnAceptar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnAceptar.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.Location = new System.Drawing.Point(84, 233);
+            this.btnAceptar.Location = new System.Drawing.Point(12, 233);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 40);
             this.btnAceptar.TabIndex = 1;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // lblNombre
             // 
@@ -114,25 +116,56 @@
             this.grbDatosContacto.TabStop = false;
             this.grbDatosContacto.Text = "Datos de Contacto";
             // 
-            // lblNomContacto
+            // txbEmail
             // 
-            this.lblNomContacto.AutoSize = true;
-            this.lblNomContacto.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomContacto.Location = new System.Drawing.Point(6, 33);
-            this.lblNomContacto.Name = "lblNomContacto";
-            this.lblNomContacto.Size = new System.Drawing.Size(56, 18);
-            this.lblNomContacto.TabIndex = 5;
-            this.lblNomContacto.Text = "Nombre";
+            this.txbEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txbEmail.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbEmail.Location = new System.Drawing.Point(92, 82);
+            this.txbEmail.Name = "txbEmail";
+            this.txbEmail.Size = new System.Drawing.Size(219, 23);
+            this.txbEmail.TabIndex = 10;
+            this.txbEmail.Validated += new System.EventHandler(this.txbEmail_Validated);
             // 
-            // lblTelefono
+            // txbDireccion
             // 
-            this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefono.Location = new System.Drawing.Point(6, 59);
-            this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(60, 18);
-            this.lblTelefono.TabIndex = 6;
-            this.lblTelefono.Text = "Telefono";
+            this.txbDireccion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txbDireccion.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbDireccion.Location = new System.Drawing.Point(92, 108);
+            this.txbDireccion.Name = "txbDireccion";
+            this.txbDireccion.Size = new System.Drawing.Size(219, 23);
+            this.txbDireccion.TabIndex = 9;
+            // 
+            // txbNomContacto
+            // 
+            this.txbNomContacto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txbNomContacto.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbNomContacto.Location = new System.Drawing.Point(92, 30);
+            this.txbNomContacto.Name = "txbNomContacto";
+            this.txbNomContacto.Size = new System.Drawing.Size(219, 23);
+            this.txbNomContacto.TabIndex = 7;
+            // 
+            // mtbTelefono
+            // 
+            this.mtbTelefono.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtbTelefono.Location = new System.Drawing.Point(92, 56);
+            this.mtbTelefono.Mask = "99999999999";
+            this.mtbTelefono.Name = "mtbTelefono";
+            this.mtbTelefono.Size = new System.Drawing.Size(86, 23);
+            this.mtbTelefono.TabIndex = 7;
+            this.mtbTelefono.ValidatingType = typeof(int);
+            // 
+            // lblDireccion
+            // 
+            this.lblDireccion.AutoSize = true;
+            this.lblDireccion.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDireccion.Location = new System.Drawing.Point(6, 111);
+            this.lblDireccion.Name = "lblDireccion";
+            this.lblDireccion.Size = new System.Drawing.Size(66, 18);
+            this.lblDireccion.TabIndex = 8;
+            this.lblDireccion.Text = "Direccion";
             // 
             // lblEmail
             // 
@@ -144,15 +177,25 @@
             this.lblEmail.TabIndex = 7;
             this.lblEmail.Text = "Email";
             // 
-            // lblDireccion
+            // lblTelefono
             // 
-            this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDireccion.Location = new System.Drawing.Point(6, 111);
-            this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(66, 18);
-            this.lblDireccion.TabIndex = 8;
-            this.lblDireccion.Text = "Direccion";
+            this.lblTelefono.AutoSize = true;
+            this.lblTelefono.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefono.Location = new System.Drawing.Point(6, 59);
+            this.lblTelefono.Name = "lblTelefono";
+            this.lblTelefono.Size = new System.Drawing.Size(60, 18);
+            this.lblTelefono.TabIndex = 6;
+            this.lblTelefono.Text = "Telefono";
+            // 
+            // lblNomContacto
+            // 
+            this.lblNomContacto.AutoSize = true;
+            this.lblNomContacto.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomContacto.Location = new System.Drawing.Point(6, 33);
+            this.lblNomContacto.Name = "lblNomContacto";
+            this.lblNomContacto.Size = new System.Drawing.Size(56, 18);
+            this.lblNomContacto.TabIndex = 5;
+            this.lblNomContacto.Text = "Nombre";
             // 
             // txbNomProv
             // 
@@ -173,54 +216,28 @@
             this.mtbCUIT.Size = new System.Drawing.Size(98, 23);
             this.mtbCUIT.TabIndex = 6;
             // 
-            // mtbTelefono
+            // btnAtras
             // 
-            this.mtbTelefono.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtbTelefono.Location = new System.Drawing.Point(92, 56);
-            this.mtbTelefono.Mask = "99999999999";
-            this.mtbTelefono.Name = "mtbTelefono";
-            this.mtbTelefono.Size = new System.Drawing.Size(86, 23);
-            this.mtbTelefono.TabIndex = 7;
-            this.mtbTelefono.ValidatingType = typeof(int);
-            // 
-            // txbNomContacto
-            // 
-            this.txbNomContacto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txbNomContacto.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbNomContacto.Location = new System.Drawing.Point(92, 30);
-            this.txbNomContacto.Name = "txbNomContacto";
-            this.txbNomContacto.Size = new System.Drawing.Size(219, 23);
-            this.txbNomContacto.TabIndex = 7;
-            // 
-            // txbDireccion
-            // 
-            this.txbDireccion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txbDireccion.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbDireccion.Location = new System.Drawing.Point(92, 108);
-            this.txbDireccion.Name = "txbDireccion";
-            this.txbDireccion.Size = new System.Drawing.Size(219, 23);
-            this.txbDireccion.TabIndex = 9;
-            // 
-            // txbEmail
-            // 
-            this.txbEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txbEmail.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbEmail.Location = new System.Drawing.Point(92, 82);
-            this.txbEmail.Name = "txbEmail";
-            this.txbEmail.Size = new System.Drawing.Size(219, 23);
-            this.txbEmail.TabIndex = 10;
-            this.txbEmail.Validated += new System.EventHandler(this.txbEmail_Validated);
+            this.btnAtras.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnAtras.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnAtras.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.Location = new System.Drawing.Point(254, 233);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(75, 40);
+            this.btnAtras.TabIndex = 7;
+            this.btnAtras.Text = "Atras";
+            this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // frmAltaProv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(341, 285);
+            this.ClientSize = new System.Drawing.Size(341, 308);
             this.ControlBox = false;
+            this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.mtbCUIT);
             this.Controls.Add(this.txbNomProv);
             this.Controls.Add(this.grbDatosContacto);
@@ -255,5 +272,6 @@
         private System.Windows.Forms.TextBox txbNomContacto;
         private System.Windows.Forms.TextBox txbEmail;
         private System.Windows.Forms.TextBox txbDireccion;
+        private System.Windows.Forms.Button btnAtras;
     }
 }

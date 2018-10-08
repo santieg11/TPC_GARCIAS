@@ -68,11 +68,9 @@ namespace TPC_GARCIAS
             {
                 frmAltaProv alta = new frmAltaProv();
                 alta.ShowDialog();
-                //Cuando termino de dar un alta, sigue acá el código...
-                //llamo al metodo cargar para re cargar...
-                //cargar();
-                //otra cosa que pueden hacer es...
-                //Form1_Load(sender, e);
+
+                cargar();
+
             }
             catch (Exception ex)
             {
