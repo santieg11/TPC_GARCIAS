@@ -1,6 +1,6 @@
 ﻿namespace TPC_GARCIAS
 {
-    partial class frmABMProv
+    partial class frmABMInsumos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,30 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvProveedores = new System.Windows.Forms.DataGridView();
+            this.dgvInsumos = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnInhabilitar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnVerContacto = new System.Windows.Forms.Button();
             this.btnHabilitar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInsumos)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvProveedores
+            // dgvInsumos
             // 
-            this.dgvProveedores.AllowUserToAddRows = false;
-            this.dgvProveedores.AllowUserToDeleteRows = false;
-            this.dgvProveedores.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvInsumos.AllowUserToAddRows = false;
+            this.dgvInsumos.AllowUserToDeleteRows = false;
+            this.dgvInsumos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvProveedores.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.dgvProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProveedores.Location = new System.Drawing.Point(12, 12);
-            this.dgvProveedores.Name = "dgvProveedores";
-            this.dgvProveedores.ReadOnly = true;
-            this.dgvProveedores.Size = new System.Drawing.Size(860, 168);
-            this.dgvProveedores.TabIndex = 0;
+            this.dgvInsumos.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.dgvInsumos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInsumos.Location = new System.Drawing.Point(12, 12);
+            this.dgvInsumos.Name = "dgvInsumos";
+            this.dgvInsumos.ReadOnly = true;
+            this.dgvInsumos.Size = new System.Drawing.Size(860, 168);
+            this.dgvInsumos.TabIndex = 0;
             // 
             // btnSalir
             // 
@@ -67,7 +66,7 @@
             // btnInhabilitar
             // 
             this.btnInhabilitar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInhabilitar.Location = new System.Drawing.Point(401, 215);
+            this.btnInhabilitar.Location = new System.Drawing.Point(492, 215);
             this.btnInhabilitar.Name = "btnInhabilitar";
             this.btnInhabilitar.Size = new System.Drawing.Size(75, 34);
             this.btnInhabilitar.TabIndex = 2;
@@ -78,7 +77,7 @@
             // btnModificar
             // 
             this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnModificar.Location = new System.Drawing.Point(586, 215);
+            this.btnModificar.Location = new System.Drawing.Point(685, 215);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 34);
             this.btnModificar.TabIndex = 3;
@@ -89,7 +88,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregar.Location = new System.Drawing.Point(505, 215);
+            this.btnAgregar.Location = new System.Drawing.Point(604, 215);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 34);
             this.btnAgregar.TabIndex = 4;
@@ -97,21 +96,10 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // btnVerContacto
-            // 
-            this.btnVerContacto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVerContacto.Location = new System.Drawing.Point(686, 215);
-            this.btnVerContacto.Name = "btnVerContacto";
-            this.btnVerContacto.Size = new System.Drawing.Size(75, 34);
-            this.btnVerContacto.TabIndex = 5;
-            this.btnVerContacto.Text = "Ver Contacto";
-            this.btnVerContacto.UseVisualStyleBackColor = true;
-            this.btnVerContacto.Click += new System.EventHandler(this.btnVerContacto_Click);
-            // 
             // btnHabilitar
             // 
             this.btnHabilitar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHabilitar.Location = new System.Drawing.Point(320, 215);
+            this.btnHabilitar.Location = new System.Drawing.Point(411, 215);
             this.btnHabilitar.Name = "btnHabilitar";
             this.btnHabilitar.Size = new System.Drawing.Size(75, 34);
             this.btnHabilitar.TabIndex = 6;
@@ -119,36 +107,34 @@
             this.btnHabilitar.UseVisualStyleBackColor = true;
             this.btnHabilitar.Click += new System.EventHandler(this.btnHabilitar_Click);
             // 
-            // frmABMProv
+            // frmABMInsumos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(884, 284);
             this.ControlBox = false;
             this.Controls.Add(this.btnHabilitar);
-            this.Controls.Add(this.btnVerContacto);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnInhabilitar);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.dgvProveedores);
+            this.Controls.Add(this.dgvInsumos);
             this.MinimumSize = new System.Drawing.Size(900, 300);
-            this.Name = "frmABMProv";
-            this.Text = "ABM Proveedores";
-            this.Load += new System.EventHandler(this.frmABMProv_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).EndInit();
+            this.Name = "frmABMInsumos";
+            this.Text = "ABM Insumos";
+            this.Load += new System.EventHandler(this.frmABMInsumos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInsumos)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvProveedores;
+        private System.Windows.Forms.DataGridView dgvInsumos;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnInhabilitar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnVerContacto;
         private System.Windows.Forms.Button btnHabilitar;
     }
 }

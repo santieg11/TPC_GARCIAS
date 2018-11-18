@@ -30,6 +30,7 @@
         {
             this.dgvListadoCompras = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btnDetalle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoCompras)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,6 +60,16 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // btnDetalle
+            // 
+            this.btnDetalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDetalle.Location = new System.Drawing.Point(501, 228);
+            this.btnDetalle.Name = "btnDetalle";
+            this.btnDetalle.Size = new System.Drawing.Size(75, 23);
+            this.btnDetalle.TabIndex = 2;
+            this.btnDetalle.Text = "Ver detalle";
+            this.btnDetalle.UseVisualStyleBackColor = true;
+            // 
             // frmListadoCompras
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -66,6 +77,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(669, 263);
+            this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.dgvListadoCompras);
             this.MinimumSize = new System.Drawing.Size(685, 302);
@@ -81,5 +93,6 @@
 
         private System.Windows.Forms.DataGridView dgvListadoCompras;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnDetalle;
     }
 }

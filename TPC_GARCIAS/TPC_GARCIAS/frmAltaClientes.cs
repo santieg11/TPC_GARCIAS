@@ -12,9 +12,9 @@ using NEGOCIO;
 
 namespace TPC_GARCIAS
 {
-    public partial class frmAltaProv : Form
+    public partial class frmAltaClientes : Form
     {
-        public frmAltaProv()
+        public frmAltaClientes()
         {
             InitializeComponent();
             txbNomProv.MaxLength = 50;
@@ -27,7 +27,7 @@ namespace TPC_GARCIAS
             txbIDContacto.ReadOnly = true;
         }
 
-        public frmAltaProv(PROVEEDORES id, char tipo)
+        public frmAltaClientes(CLIENTES id, char tipo)
         {
             InitializeComponent();
             txbNomProv.MaxLength = 50;
@@ -43,17 +43,17 @@ namespace TPC_GARCIAS
 
             try
             {
-                ProveedoresNegocio conectarP = new ProveedoresNegocio();
-                PROVEEDORES datosP = new PROVEEDORES();
-                datosP = conectarP.ConsultarProv(id.intIDProv);
+                ClientesNegocio conectarCl = new ClientesNegocio();
+                CLIENTES datosCl = new CLIENTES();
+                datosCl = conectarCl.ConsultarProv(id.intIDCliente);
 
                 ContactosNegocio conectarC = new ContactosNegocio();
                 DatosContacto datosC = new DatosContacto();
                 datosC = conectarC.consultar(id.intIdContacto);
 
-                txbIDProv.Text = id.intIDProv.ToString();
-                txbNomProv.Text = datosP.strNombre;
-                mtbCUIT.Text = datosP.strCuit;
+                txbIDProv.Text = id.intIDCliente.ToString();
+                txbNomProv.Text = datosCl.strNombre;
+                mtbCUIT.Text = datosCl.strCuit;
                 txbIDContacto.Text = id.intIdContacto.ToString();
 
                 txbNomContacto.Text = datosC.strNombre;
@@ -143,7 +143,7 @@ namespace TPC_GARCIAS
             }
             finally
             {
-                MessageBox.Show("Proveedor creado exitosamente");
+                MessageBox.Show("Cliente creado exitosamente");
 
             }
 
@@ -178,7 +178,7 @@ namespace TPC_GARCIAS
 
             conectarP.modificar(datosP);
             conectarC.modificar(datosC);
-            MessageBox.Show("Proveedor modificado");
+            MessageBox.Show("Cliente modificado");
         }
     }
 }

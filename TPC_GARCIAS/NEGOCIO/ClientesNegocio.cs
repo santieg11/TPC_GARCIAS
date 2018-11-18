@@ -8,29 +8,29 @@ using System.Data.SqlClient;
 
 namespace NEGOCIO
 {
-    public class ProveedoresNegocio
+    public class ClientesNegocio
     {
         
-        public IList<PROVEEDORES> listar()
+        public IList<CLIENTES> listar()
         {
 
             clsConexiones conexion = new clsConexiones();
                         
-            IList<PROVEEDORES> lista = new List<PROVEEDORES>();
-            PROVEEDORES aux;
+            IList<CLIENTES> lista = new List<CLIENTES>();
+            CLIENTES aux;
 
             try
             {
                 conexion = new clsConexiones();
-                conexion.setearConsulta("SELECT * from PROVEEDORES");
+                conexion.setearConsulta("SELECT * from CLIENTES");
                 conexion.abrirConexion();
                 conexion.ejecutarConsulta();
                 
                 while (conexion.Lector.Read())
                 {
-                    aux = new PROVEEDORES();
+                    aux = new CLIENTES();
                                           
-                    aux.intIDProv = (int)conexion.Lector["IDPROV"];
+                    aux.intIDCliente = (int)conexion.Lector["IDCLIENTE"];
                     aux.strNombre = (string) conexion.Lector["NOMBRE"];
                     aux.strCuit = (string)conexion.Lector["CUIT"];
                     aux.intIdContacto = (int)conexion.Lector["IDCONTACTO"];
@@ -70,19 +70,19 @@ namespace NEGOCIO
 
         }
 
-        public void modificar(PROVEEDORES prov)
+        public void modificar(CLIENTES client)
         {
 
             clsConexiones conexion = new clsConexiones();
             try
             {
-                conexion.setearConsulta("UPDATE PROVEEDORES SET NOMBRE=@NOMBRE, CUIT=@CUIT, ULT_MOD=@MOD WHERE IDCONTACTO=@ID ");
+                conexion.setearConsulta("UPDATE CLIENTES SET NOMBRE=@NOMBRE, CUIT=@CUIT, ULT_MOD=@MOD WHERE IDCONTACTO=@ID ");
 
                 conexion.Comando.Parameters.Clear();
-                conexion.Comando.Parameters.AddWithValue("@ID", prov.intIDProv);
-                conexion.Comando.Parameters.AddWithValue("@NOMBRE", prov.strNombre);
-                conexion.Comando.Parameters.AddWithValue("@CUIT", prov.strCuit);
-                conexion.Comando.Parameters.AddWithValue("@MOD", prov.datUltMod);
+                conexion.Comando.Parameters.AddWithValue("@ID", client.intIDCliente);
+                conexion.Comando.Parameters.AddWithValue("@NOMBRE", client.strNombre);
+                conexion.Comando.Parameters.AddWithValue("@CUIT", client.strCuit);
+                conexion.Comando.Parameters.AddWithValue("@MOD", client.datUltMod);
 
                 conexion.abrirConexion();
                 conexion.ejecutarAccion();
@@ -104,12 +104,12 @@ namespace NEGOCIO
             }
         }
 
-        public void alta(PROVEEDORES nuevo)
+        public void alta(CLIENTES nuevo)
         {
             clsConexiones conexion = new clsConexiones();
             try
             {
-                conexion.setearConsulta("insert into PROVEEDORES (NOMBRE, CUIT, IDCONTACTO, FECHA_ALTA, FECHA_BAJA, ULT_MOD, STATUS) values (@NOMBRE, @CUIT, @IDCONTACTO, @FECHA_ALTA, @FECHA_BAJA, @ULT_MOD, 1)");
+                conexion.setearConsulta("insert into CLIENTES (NOMBRE, CUIT, IDCONTACTO, FECHA_ALTA, FECHA_BAJA, ULT_MOD, STATUS) values (@NOMBRE, @CUIT, @IDCONTACTO, @FECHA_ALTA, @FECHA_BAJA, @ULT_MOD, 1)");
                 conexion.Comando.Parameters.Clear();
                 conexion.Comando.Parameters.AddWithValue("@NOMBRE", nuevo.strNombre);
                 conexion.Comando.Parameters.AddWithValue("@CUIT", nuevo.strCuit);
@@ -139,7 +139,7 @@ namespace NEGOCIO
             try
             {
                 conexion = new clsConexiones();
-                conexion.setearConsulta("Update PROVEEDORES Set STATUS = 0, FECHA_BAJA=@BAJA Where IDPROV=@id");
+                conexion.setearConsulta("Update CLIENTES Set STATUS = 0, FECHA_BAJA=@BAJA Where IDCLIENTE=@id");
                 conexion.Comando.Parameters.Clear();
                 conexion.Comando.Parameters.AddWithValue("@id", id);
                 conexion.Comando.Parameters.AddWithValue("@baja", DateTime.Now);
@@ -159,7 +159,7 @@ namespace NEGOCIO
             try
             {
                 conexion = new clsConexiones();
-                conexion.setearConsulta("Update PROVEEDORES Set STATUS = 1, FECHA_BAJA=@BAJA, ULT_MOD=@MOD Where IDPROV=@id");
+                conexion.setearConsulta("Update CLIENTES Set STATUS = 1, FECHA_BAJA=@BAJA, ULT_MOD=@MOD Where IDCLIENTE=@id");
                 conexion.Comando.Parameters.Clear();
                 conexion.Comando.Parameters.AddWithValue("@id", id);
                 conexion.Comando.Parameters.AddWithValue("@BAJA", DBNull.Value);
@@ -175,23 +175,23 @@ namespace NEGOCIO
             }
         }
 
-        public PROVEEDORES ConsultarProv(int id)
+        public CLIENTES ConsultarProv(int id)
         {
-            PROVEEDORES aux;
+            CLIENTES aux;
             clsConexiones conexion = new clsConexiones();
             try
             {
-                conexion.setearConsulta("SELECT IDPROV, NOMBRE, CUIT, IDCONTACTO from PROVEEDORES where IDPROV=@id");
+                conexion.setearConsulta("SELECT IDCLIENTE, NOMBRE, CUIT, IDCONTACTO from CLIENTES where IDCLIENTE=@id");
                 conexion.Comando.Parameters.Clear();
                 conexion.Comando.Parameters.AddWithValue("@id", id);
                 conexion.abrirConexion();
                 conexion.ejecutarConsulta();
 
-                aux = new PROVEEDORES();
+                aux = new CLIENTES();
 
                 conexion.Lector.Read();
 
-                aux.intIDProv = (int)conexion.Lector["IDPROV"];
+                aux.intIDCliente = (int)conexion.Lector["IDCLIENTE"];
                 aux.strNombre = (string)conexion.Lector["NOMBRE"];
                 aux.strCuit = (string)conexion.Lector["CUIT"];
                 aux.intIdContacto = (int)conexion.Lector["IDCONTACTO"];

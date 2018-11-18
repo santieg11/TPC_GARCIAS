@@ -1,6 +1,6 @@
 ﻿namespace TPC_GARCIAS
 {
-    partial class frmAltaProv
+    partial class frmAltaClientes
     {
         /// <summary>
         /// Required designer variable.

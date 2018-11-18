@@ -49,17 +49,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmABMClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmABMClientes.Designer.cs">
+      <DependentUpon>frmABMClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmABMInsumos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmABMInsumos.Designer.cs">
+      <DependentUpon>frmABMInsumos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmABMProv.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmABMProv.Designer.cs">
       <DependentUpon>frmABMProv.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmContactos.cs">
+    <Compile Include="frmAltaClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmContactos.Designer.cs">
-      <DependentUpon>frmContactos.cs</DependentUpon>
+    <Compile Include="frmAltaClientes.Designer.cs">
+      <DependentUpon>frmAltaClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInsumos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInsumos.Designer.cs">
+      <DependentUpon>frmInsumos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmListadoCompras.cs">
       <SubType>Form</SubType>
@@ -81,11 +99,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmABMClientes.resx">
+      <DependentUpon>frmABMClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmABMInsumos.resx">
+      <DependentUpon>frmABMInsumos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmABMProv.resx">
       <DependentUpon>frmABMProv.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmContactos.resx">
-      <DependentUpon>frmContactos.cs</DependentUpon>
+    <EmbeddedResource Include="frmAltaClientes.resx">
+      <DependentUpon>frmAltaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInsumos.resx">
+      <DependentUpon>frmInsumos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListadoCompras.resx">
       <DependentUpon>frmListadoCompras.cs</DependentUpon>

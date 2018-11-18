@@ -8,34 +8,37 @@ using System.Data.SqlClient;
 
 namespace NEGOCIO
 {
-    public class ProveedoresNegocio
+    public class InsumosNegocio
     {
         
-        public IList<PROVEEDORES> listar()
+        public IList<INSUMOS> listar()
         {
 
             clsConexiones conexion = new clsConexiones();
                         
-            IList<PROVEEDORES> lista = new List<PROVEEDORES>();
-            PROVEEDORES aux;
+            IList<INSUMOS> lista = new List<INSUMOS>();
+            INSUMOS aux;
 
             try
             {
                 conexion = new clsConexiones();
-                conexion.setearConsulta("SELECT * from PROVEEDORES");
+                conexion.setearConsulta("SELECT * from INSUMOS");
                 conexion.abrirConexion();
                 conexion.ejecutarConsulta();
                 
                 while (conexion.Lector.Read())
                 {
-                    aux = new PROVEEDORES();
+                    aux = new INSUMOS();
                                           
-                    aux.intIDProv = (int)conexion.Lector["IDPROV"];
-                    aux.strNombre = (string) conexion.Lector["NOMBRE"];
-                    aux.strCuit = (string)conexion.Lector["CUIT"];
-                    aux.intIdContacto = (int)conexion.Lector["IDCONTACTO"];
-                    aux.datFechaAlta = (DateTime) conexion.Lector["FECHA_ALTA"];
+                    aux.intCodInsumo = (int)conexion.Lector["IDINSUMO"];
+                    aux.strDescripcion = (string) conexion.Lector["DESCRIPCION"];
+                    aux.decValorUltMov = (decimal)conexion.Lector["VALOR_ULT_COMPRA"];
+                    
+                    if (conexion.Lector["FECHA_ULT_COMPRA"] == DBNull.Value)
+                        aux.datFechaBaja = null;
 
+                    aux.datFechaAlta = (DateTime) conexion.Lector["FECHA_ALTA"];
+                                    
                     if (conexion.Lector["FECHA_BAJA"] == DBNull.Value)
                         aux.datFechaBaja = null;
                     else
@@ -70,19 +73,18 @@ namespace NEGOCIO
 
         }
 
-        public void modificar(PROVEEDORES prov)
+        public void modificar(INSUMOS insu)
         {
 
             clsConexiones conexion = new clsConexiones();
             try
             {
-                conexion.setearConsulta("UPDATE PROVEEDORES SET NOMBRE=@NOMBRE, CUIT=@CUIT, ULT_MOD=@MOD WHERE IDCONTACTO=@ID ");
+                conexion.setearConsulta("UPDATE INSUMOS SET DESCRIPCION=@DESC, ULT_MOD=@MOD WHERE IDINSUMO=@ID");
 
                 conexion.Comando.Parameters.Clear();
-                conexion.Comando.Parameters.AddWithValue("@ID", prov.intIDProv);
-                conexion.Comando.Parameters.AddWithValue("@NOMBRE", prov.strNombre);
-                conexion.Comando.Parameters.AddWithValue("@CUIT", prov.strCuit);
-                conexion.Comando.Parameters.AddWithValue("@MOD", prov.datUltMod);
+                conexion.Comando.Parameters.AddWithValue("@ID", insu.intCodInsumo);
+                conexion.Comando.Parameters.AddWithValue("@DESC", insu.strDescripcion);
+                conexion.Comando.Parameters.AddWithValue("@MOD", insu.datUltMod);
 
                 conexion.abrirConexion();
                 conexion.ejecutarAccion();
@@ -104,16 +106,16 @@ namespace NEGOCIO
             }
         }
 
-        public void alta(PROVEEDORES nuevo)
+        public void alta(INSUMOS nuevo)
         {
             clsConexiones conexion = new clsConexiones();
             try
             {
-                conexion.setearConsulta("insert into PROVEEDORES (NOMBRE, CUIT, IDCONTACTO, FECHA_ALTA, FECHA_BAJA, ULT_MOD, STATUS) values (@NOMBRE, @CUIT, @IDCONTACTO, @FECHA_ALTA, @FECHA_BAJA, @ULT_MOD, 1)");
+                conexion.setearConsulta("insert into INSUMOS (DESCRIPCION, VALOR_ULT_COMPRA, FECHA_ULT_COMPRA, FECHA_ALTA, FECHA_BAJA, ULT_MOD, STATUS) values (@DESC, @VAL_ULT_C, @F_ULT_C, @FECHA_ALTA, @FECHA_BAJA, @ULT_MOD, 1)");
                 conexion.Comando.Parameters.Clear();
-                conexion.Comando.Parameters.AddWithValue("@NOMBRE", nuevo.strNombre);
-                conexion.Comando.Parameters.AddWithValue("@CUIT", nuevo.strCuit);
-                conexion.Comando.Parameters.AddWithValue("@IDCONTACTO", nuevo.intIdContacto);
+                conexion.Comando.Parameters.AddWithValue("@DESC", nuevo.strDescripcion);
+                conexion.Comando.Parameters.AddWithValue("@VAL_ULT_C", 0);
+                conexion.Comando.Parameters.AddWithValue("@F_ULT_C", DBNull.Value);
                 conexion.Comando.Parameters.AddWithValue("@FECHA_ALTA", DateTime.Now);
                 conexion.Comando.Parameters.AddWithValue("@FECHA_BAJA", DBNull.Value);
                 conexion.Comando.Parameters.AddWithValue("@ULT_MOD", DateTime.Now);
@@ -139,7 +141,7 @@ namespace NEGOCIO
             try
             {
                 conexion = new clsConexiones();
-                conexion.setearConsulta("Update PROVEEDORES Set STATUS = 0, FECHA_BAJA=@BAJA Where IDPROV=@id");
+                conexion.setearConsulta("Update INSUMOS Set STATUS = 0, FECHA_BAJA=@BAJA Where IDINSUMO=@id");
                 conexion.Comando.Parameters.Clear();
                 conexion.Comando.Parameters.AddWithValue("@id", id);
                 conexion.Comando.Parameters.AddWithValue("@baja", DateTime.Now);
@@ -159,7 +161,7 @@ namespace NEGOCIO
             try
             {
                 conexion = new clsConexiones();
-                conexion.setearConsulta("Update PROVEEDORES Set STATUS = 1, FECHA_BAJA=@BAJA, ULT_MOD=@MOD Where IDPROV=@id");
+                conexion.setearConsulta("Update INSUMOS Set STATUS = 1, FECHA_BAJA=@BAJA, ULT_MOD=@MOD Where IDINSUMO=@id");
                 conexion.Comando.Parameters.Clear();
                 conexion.Comando.Parameters.AddWithValue("@id", id);
                 conexion.Comando.Parameters.AddWithValue("@BAJA", DBNull.Value);
@@ -175,26 +177,39 @@ namespace NEGOCIO
             }
         }
 
-        public PROVEEDORES ConsultarProv(int id)
+        public INSUMOS consultar(int id)
         {
-            PROVEEDORES aux;
+            INSUMOS aux;
             clsConexiones conexion = new clsConexiones();
             try
             {
-                conexion.setearConsulta("SELECT IDPROV, NOMBRE, CUIT, IDCONTACTO from PROVEEDORES where IDPROV=@id");
+                conexion.setearConsulta("SELECT * from INSUMOS where IDINSUMO=@id");
                 conexion.Comando.Parameters.Clear();
                 conexion.Comando.Parameters.AddWithValue("@id", id);
                 conexion.abrirConexion();
                 conexion.ejecutarConsulta();
 
-                aux = new PROVEEDORES();
+                aux = new INSUMOS();
 
                 conexion.Lector.Read();
 
-                aux.intIDProv = (int)conexion.Lector["IDPROV"];
-                aux.strNombre = (string)conexion.Lector["NOMBRE"];
-                aux.strCuit = (string)conexion.Lector["CUIT"];
-                aux.intIdContacto = (int)conexion.Lector["IDCONTACTO"];
+                aux.intCodInsumo = (int)conexion.Lector["IDINSUMO"];
+                aux.strDescripcion = (string)conexion.Lector["DESCRIPCION"];
+                aux.decValorUltMov = (decimal)conexion.Lector["VALOR_ULT_COMPRA"];
+                aux.datFechaUltMov = (DateTime)conexion.Lector["FECHA_ULT_COMPRA"];
+                aux.datFechaAlta = (DateTime)conexion.Lector["FECHA_ALTA"];
+
+                if (conexion.Lector["FECHA_BAJA"] == DBNull.Value)
+                    aux.datFechaBaja = null;
+                else
+                    aux.datFechaBaja = (DateTime)conexion.Lector["FECHA_BAJA"];
+
+                if (conexion.Lector["ULT_MOD"] == DBNull.Value)
+                    aux.datUltMod = null;
+                else
+                    aux.datUltMod = (DateTime)conexion.Lector["ULT_MOD"];
+
+                aux.intStatus = (int)conexion.Lector["STATUS"];
 
                 return aux;
             }
@@ -210,6 +225,7 @@ namespace NEGOCIO
 
             }
         }
+
 
     }
     

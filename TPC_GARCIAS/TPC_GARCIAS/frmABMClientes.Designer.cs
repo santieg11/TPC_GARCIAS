@@ -1,6 +1,6 @@
 ﻿namespace TPC_GARCIAS
 {
-    partial class frmABMProv
+    partial class frmABMClientes
     {
         /// <summary>
         /// Required designer variable.
@@ -119,7 +119,7 @@
             this.btnHabilitar.UseVisualStyleBackColor = true;
             this.btnHabilitar.Click += new System.EventHandler(this.btnHabilitar_Click);
             // 
-            // frmABMProv
+            // frmABMClientes
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
@@ -133,8 +133,8 @@
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.dgvProveedores);
             this.MinimumSize = new System.Drawing.Size(900, 300);
-            this.Name = "frmABMProv";
-            this.Text = "ABM Proveedores";
+            this.Name = "frmABMClientes";
+            this.Text = "ABM Clientes";
             this.Load += new System.EventHandler(this.frmABMProv_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).EndInit();
             this.ResumeLayout(false);

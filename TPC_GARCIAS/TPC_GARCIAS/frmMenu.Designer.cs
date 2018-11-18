@@ -96,6 +96,7 @@
             this.btnABMInsumos.TabIndex = 8;
             this.btnABMInsumos.Text = "ABM\r\nInsumos";
             this.btnABMInsumos.UseVisualStyleBackColor = true;
+            this.btnABMInsumos.Click += new System.EventHandler(this.btnABMInsumos_Click);
             // 
             // btnListadoInsumos
             // 
@@ -191,6 +192,7 @@
             this.btnABMClientes.TabIndex = 6;
             this.btnABMClientes.Text = "ABM Clientes";
             this.btnABMClientes.UseVisualStyleBackColor = true;
+            this.btnABMClientes.Click += new System.EventHandler(this.btnABMClientes_Click);
             // 
             // grbProduccion
             // 
@@ -329,7 +331,6 @@
             this.Controls.Add(this.grbCompras);
             this.Controls.Add(this.btnSalir);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.MinimumSize = new System.Drawing.Size(371, 511);
             this.Name = "frmMenu";
             this.Text = "Menu principal";

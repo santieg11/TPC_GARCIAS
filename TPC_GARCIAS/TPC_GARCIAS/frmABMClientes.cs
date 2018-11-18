@@ -12,9 +12,9 @@ using NEGOCIO;
 
 namespace TPC_GARCIAS
 {
-    public partial class frmABMProv : Form
+    public partial class frmABMClientes : Form
     {
-        public frmABMProv()
+        public frmABMClientes()
         {
             InitializeComponent();
         }
@@ -33,11 +33,11 @@ namespace TPC_GARCIAS
 
         private void cargar()
         {
-            ProveedoresNegocio prov = new ProveedoresNegocio();
+            ClientesNegocio client = new ClientesNegocio();
             try
             {
-                dgvProveedores.DataSource = prov.listar();
-                dgvProveedores.Columns[0].HeaderText = "ID Prov";
+                dgvProveedores.DataSource = client.listar();
+                dgvProveedores.Columns[0].HeaderText = "ID Cliente";
                 dgvProveedores.Columns[1].HeaderText = "Nombre";
                 dgvProveedores.Columns[2].HeaderText = "CUIT";
                 dgvProveedores.Columns[3].HeaderText = "ID Contacto";
@@ -66,7 +66,7 @@ namespace TPC_GARCIAS
         {
             try
             {
-                frmAltaProv alta = new frmAltaProv();
+                frmAltaClientes alta = new frmAltaClientes();
                 alta.ShowDialog();
 
                 cargar();
@@ -82,10 +82,10 @@ namespace TPC_GARCIAS
         {
             try
             {
-                PROVEEDORES id;
-                id = (PROVEEDORES)dgvProveedores.CurrentRow.DataBoundItem;
+                CLIENTES id;
+                id = (CLIENTES)dgvProveedores.CurrentRow.DataBoundItem;
 
-                frmAltaProv ver = new frmAltaProv(id,'v');
+                frmAltaClientes ver = new frmAltaClientes(id,'v');
                 ver.ShowDialog();
 
                 cargar();
@@ -103,11 +103,11 @@ namespace TPC_GARCIAS
 
         private void btnBaja_Click(object sender, EventArgs e)
         {
-            PROVEEDORES id;
-            id = (PROVEEDORES)dgvProveedores.CurrentRow.DataBoundItem;
+            CLIENTES id;
+            id = (CLIENTES)dgvProveedores.CurrentRow.DataBoundItem;
 
-            ProveedoresNegocio prov = new ProveedoresNegocio();
-            prov.eliminarLogico(id.intIDProv);
+            ClientesNegocio prov = new ClientesNegocio();
+            prov.eliminarLogico(id.intIDCliente);
 
             cargar();
 
@@ -117,10 +117,10 @@ namespace TPC_GARCIAS
         {
             try
             {
-                PROVEEDORES id;
-                id = (PROVEEDORES)dgvProveedores.CurrentRow.DataBoundItem;
+                CLIENTES id;
+                id = (CLIENTES)dgvProveedores.CurrentRow.DataBoundItem;
 
-                frmAltaProv mod = new frmAltaProv(id,'m');
+                frmAltaClientes mod = new frmAltaClientes(id,'m');
                 mod.ShowDialog();
                 
                 cargar();
@@ -134,11 +134,11 @@ namespace TPC_GARCIAS
 
         private void btnHabilitar_Click(object sender, EventArgs e)
         {
-            PROVEEDORES id;
-            id = (PROVEEDORES)dgvProveedores.CurrentRow.DataBoundItem;
+            CLIENTES id;
+            id = (CLIENTES)dgvProveedores.CurrentRow.DataBoundItem;
 
-            ProveedoresNegocio prov = new ProveedoresNegocio();
-            prov.habilitarlogico(id.intIDProv);
+            ClientesNegocio client = new ClientesNegocio();
+            client.habilitarlogico(id.intIDCliente);
 
             cargar();
         }

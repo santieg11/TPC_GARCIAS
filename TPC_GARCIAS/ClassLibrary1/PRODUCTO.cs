@@ -9,11 +9,11 @@ namespace DOMINIO
     public class PRODUCTO
     {
         public string strDescripcion { get; set; }
-        public float fltValorUltMov { get; set; }
-        public DateTime datFechaUltMov { get; set; }
+        public Nullable<decimal> decValorUltMov { get; set; }
+        public Nullable<DateTime> datFechaUltMov { get; set; }
         public DateTime datFechaAlta { get; set; }
-        public DateTime datFechaBaja { get; set; }
-        public DateTime datUltMod { get; set; }
+        public Nullable<DateTime> datFechaBaja { get; set; }
+        public Nullable<DateTime> datUltMod { get; set; }
         public int intStatus { get; set; }
     }
 }
