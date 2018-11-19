@@ -31,22 +31,19 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.grbCompras = new System.Windows.Forms.GroupBox();
             this.btnABMInsumos = new System.Windows.Forms.Button();
-            this.btnListadoInsumos = new System.Windows.Forms.Button();
             this.btnIngresoRemito = new System.Windows.Forms.Button();
             this.btnABMProveedores = new System.Windows.Forms.Button();
             this.grbVentas = new System.Windows.Forms.GroupBox();
             this.btnABMProductos = new System.Windows.Forms.Button();
-            this.btnListadoProductos = new System.Windows.Forms.Button();
             this.btnIngresoVenta = new System.Windows.Forms.Button();
             this.btnABMClientes = new System.Windows.Forms.Button();
             this.grbProduccion = new System.Windows.Forms.GroupBox();
             this.btnStock = new System.Windows.Forms.Button();
-            this.btnStatusPedidos = new System.Windows.Forms.Button();
+            this.btnPedidos = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnABMPerfiles = new System.Windows.Forms.Button();
             this.btnABMUsuarios = new System.Windows.Forms.Button();
             this.grbReportes = new System.Windows.Forms.GroupBox();
-            this.btnListadoPedidos = new System.Windows.Forms.Button();
             this.btnListadoVentas = new System.Windows.Forms.Button();
             this.btnListadoCompras = new System.Windows.Forms.Button();
             this.grbCompras.SuspendLayout();
@@ -61,7 +58,7 @@
             this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalir.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnSalir.Location = new System.Drawing.Point(268, 437);
+            this.btnSalir.Location = new System.Drawing.Point(191, 422);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 0;
@@ -75,13 +72,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grbCompras.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.grbCompras.Controls.Add(this.btnABMInsumos);
-            this.grbCompras.Controls.Add(this.btnListadoInsumos);
             this.grbCompras.Controls.Add(this.btnIngresoRemito);
             this.grbCompras.Controls.Add(this.btnABMProveedores);
             this.grbCompras.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.grbCompras.Location = new System.Drawing.Point(12, 12);
             this.grbCompras.Name = "grbCompras";
-            this.grbCompras.Size = new System.Drawing.Size(331, 75);
+            this.grbCompras.Size = new System.Drawing.Size(254, 75);
             this.grbCompras.TabIndex = 2;
             this.grbCompras.TabStop = false;
             this.grbCompras.Text = "Compras";
@@ -90,7 +86,7 @@
             // 
             this.btnABMInsumos.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnABMInsumos.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnABMInsumos.Location = new System.Drawing.Point(168, 19);
+            this.btnABMInsumos.Location = new System.Drawing.Point(87, 19);
             this.btnABMInsumos.Name = "btnABMInsumos";
             this.btnABMInsumos.Size = new System.Drawing.Size(75, 39);
             this.btnABMInsumos.TabIndex = 8;
@@ -98,22 +94,11 @@
             this.btnABMInsumos.UseVisualStyleBackColor = true;
             this.btnABMInsumos.Click += new System.EventHandler(this.btnABMInsumos_Click);
             // 
-            // btnListadoInsumos
-            // 
-            this.btnListadoInsumos.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnListadoInsumos.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnListadoInsumos.Location = new System.Drawing.Point(249, 19);
-            this.btnListadoInsumos.Name = "btnListadoInsumos";
-            this.btnListadoInsumos.Size = new System.Drawing.Size(75, 39);
-            this.btnListadoInsumos.TabIndex = 7;
-            this.btnListadoInsumos.Text = "Listado Insumos";
-            this.btnListadoInsumos.UseVisualStyleBackColor = true;
-            // 
             // btnIngresoRemito
             // 
             this.btnIngresoRemito.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnIngresoRemito.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnIngresoRemito.Location = new System.Drawing.Point(87, 19);
+            this.btnIngresoRemito.Location = new System.Drawing.Point(168, 19);
             this.btnIngresoRemito.Name = "btnIngresoRemito";
             this.btnIngresoRemito.Size = new System.Drawing.Size(75, 39);
             this.btnIngresoRemito.TabIndex = 6;
@@ -138,13 +123,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grbVentas.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.grbVentas.Controls.Add(this.btnABMProductos);
-            this.grbVentas.Controls.Add(this.btnListadoProductos);
             this.grbVentas.Controls.Add(this.btnIngresoVenta);
             this.grbVentas.Controls.Add(this.btnABMClientes);
             this.grbVentas.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.grbVentas.Location = new System.Drawing.Point(12, 93);
             this.grbVentas.Name = "grbVentas";
-            this.grbVentas.Size = new System.Drawing.Size(331, 75);
+            this.grbVentas.Size = new System.Drawing.Size(254, 75);
             this.grbVentas.TabIndex = 3;
             this.grbVentas.TabStop = false;
             this.grbVentas.Text = "Ventas";
@@ -153,29 +137,18 @@
             // 
             this.btnABMProductos.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnABMProductos.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnABMProductos.Location = new System.Drawing.Point(168, 19);
+            this.btnABMProductos.Location = new System.Drawing.Point(87, 19);
             this.btnABMProductos.Name = "btnABMProductos";
             this.btnABMProductos.Size = new System.Drawing.Size(75, 39);
             this.btnABMProductos.TabIndex = 10;
             this.btnABMProductos.Text = "ABM Productos";
             this.btnABMProductos.UseVisualStyleBackColor = true;
             // 
-            // btnListadoProductos
-            // 
-            this.btnListadoProductos.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnListadoProductos.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnListadoProductos.Location = new System.Drawing.Point(249, 19);
-            this.btnListadoProductos.Name = "btnListadoProductos";
-            this.btnListadoProductos.Size = new System.Drawing.Size(75, 39);
-            this.btnListadoProductos.TabIndex = 9;
-            this.btnListadoProductos.Text = "Listado Productos";
-            this.btnListadoProductos.UseVisualStyleBackColor = true;
-            // 
             // btnIngresoVenta
             // 
             this.btnIngresoVenta.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnIngresoVenta.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnIngresoVenta.Location = new System.Drawing.Point(87, 19);
+            this.btnIngresoVenta.Location = new System.Drawing.Point(168, 19);
             this.btnIngresoVenta.Name = "btnIngresoVenta";
             this.btnIngresoVenta.Size = new System.Drawing.Size(75, 39);
             this.btnIngresoVenta.TabIndex = 8;
@@ -190,7 +163,7 @@
             this.btnABMClientes.Name = "btnABMClientes";
             this.btnABMClientes.Size = new System.Drawing.Size(75, 39);
             this.btnABMClientes.TabIndex = 6;
-            this.btnABMClientes.Text = "ABM Clientes";
+            this.btnABMClientes.Text = "ABM\r\nClientes";
             this.btnABMClientes.UseVisualStyleBackColor = true;
             this.btnABMClientes.Click += new System.EventHandler(this.btnABMClientes_Click);
             // 
@@ -199,12 +172,11 @@
             this.grbProduccion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grbProduccion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.grbProduccion.Controls.Add(this.btnStock);
-            this.grbProduccion.Controls.Add(this.btnStatusPedidos);
+            this.grbProduccion.Controls.Add(this.btnPedidos);
             this.grbProduccion.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.grbProduccion.Location = new System.Drawing.Point(12, 174);
             this.grbProduccion.Name = "grbProduccion";
-            this.grbProduccion.Size = new System.Drawing.Size(331, 75);
+            this.grbProduccion.Size = new System.Drawing.Size(254, 75);
             this.grbProduccion.TabIndex = 4;
             this.grbProduccion.TabStop = false;
             this.grbProduccion.Text = "Produccion";
@@ -213,23 +185,23 @@
             // 
             this.btnStock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnStock.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnStock.Location = new System.Drawing.Point(87, 19);
+            this.btnStock.Location = new System.Drawing.Point(168, 19);
             this.btnStock.Name = "btnStock";
-            this.btnStock.Size = new System.Drawing.Size(75, 36);
+            this.btnStock.Size = new System.Drawing.Size(75, 39);
             this.btnStock.TabIndex = 9;
-            this.btnStock.Text = "Stock\r\nGeneral";
+            this.btnStock.Text = "Stock\r\nInsumos";
             this.btnStock.UseVisualStyleBackColor = true;
             // 
-            // btnStatusPedidos
+            // btnPedidos
             // 
-            this.btnStatusPedidos.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnStatusPedidos.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnStatusPedidos.Location = new System.Drawing.Point(6, 19);
-            this.btnStatusPedidos.Name = "btnStatusPedidos";
-            this.btnStatusPedidos.Size = new System.Drawing.Size(75, 36);
-            this.btnStatusPedidos.TabIndex = 8;
-            this.btnStatusPedidos.Text = "Status Pedidos";
-            this.btnStatusPedidos.UseVisualStyleBackColor = true;
+            this.btnPedidos.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnPedidos.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnPedidos.Location = new System.Drawing.Point(6, 19);
+            this.btnPedidos.Name = "btnPedidos";
+            this.btnPedidos.Size = new System.Drawing.Size(75, 36);
+            this.btnPedidos.TabIndex = 8;
+            this.btnPedidos.Text = "Manejo Pedidos";
+            this.btnPedidos.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -241,7 +213,7 @@
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.groupBox1.Location = new System.Drawing.Point(12, 336);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(331, 75);
+            this.groupBox1.Size = new System.Drawing.Size(254, 75);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Adm Sistema";
@@ -273,27 +245,16 @@
             this.grbReportes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grbReportes.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.grbReportes.Controls.Add(this.btnListadoPedidos);
+            this.grbReportes.Controls.Add(this.btnStock);
             this.grbReportes.Controls.Add(this.btnListadoVentas);
             this.grbReportes.Controls.Add(this.btnListadoCompras);
             this.grbReportes.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.grbReportes.Location = new System.Drawing.Point(12, 255);
             this.grbReportes.Name = "grbReportes";
-            this.grbReportes.Size = new System.Drawing.Size(331, 75);
+            this.grbReportes.Size = new System.Drawing.Size(254, 75);
             this.grbReportes.TabIndex = 10;
             this.grbReportes.TabStop = false;
             this.grbReportes.Text = "Reportes";
-            // 
-            // btnListadoPedidos
-            // 
-            this.btnListadoPedidos.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnListadoPedidos.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnListadoPedidos.Location = new System.Drawing.Point(168, 19);
-            this.btnListadoPedidos.Name = "btnListadoPedidos";
-            this.btnListadoPedidos.Size = new System.Drawing.Size(75, 39);
-            this.btnListadoPedidos.TabIndex = 11;
-            this.btnListadoPedidos.Text = "Listado Pedidos";
-            this.btnListadoPedidos.UseVisualStyleBackColor = true;
             // 
             // btnListadoVentas
             // 
@@ -323,7 +284,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(355, 472);
+            this.ClientSize = new System.Drawing.Size(278, 457);
             this.Controls.Add(this.grbReportes);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grbProduccion);
@@ -331,7 +292,7 @@
             this.Controls.Add(this.grbCompras);
             this.Controls.Add(this.btnSalir);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MinimumSize = new System.Drawing.Size(371, 511);
+            this.MinimumSize = new System.Drawing.Size(294, 496);
             this.Name = "frmMenu";
             this.Text = "Menu principal";
             this.grbCompras.ResumeLayout(false);
@@ -352,18 +313,15 @@
         private System.Windows.Forms.Button btnABMClientes;
         private System.Windows.Forms.Button btnABMProveedores;
         private System.Windows.Forms.Button btnStock;
-        private System.Windows.Forms.Button btnStatusPedidos;
+        private System.Windows.Forms.Button btnPedidos;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnABMPerfiles;
         private System.Windows.Forms.Button btnABMUsuarios;
         private System.Windows.Forms.Button btnABMInsumos;
-        private System.Windows.Forms.Button btnListadoInsumos;
         private System.Windows.Forms.Button btnIngresoRemito;
         private System.Windows.Forms.Button btnABMProductos;
-        private System.Windows.Forms.Button btnListadoProductos;
         private System.Windows.Forms.Button btnIngresoVenta;
         private System.Windows.Forms.GroupBox grbReportes;
-        private System.Windows.Forms.Button btnListadoPedidos;
         private System.Windows.Forms.Button btnListadoVentas;
         private System.Windows.Forms.Button btnListadoCompras;
     }

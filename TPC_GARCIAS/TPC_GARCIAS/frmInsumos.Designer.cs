@@ -43,7 +43,7 @@
             this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnCancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnCancelar.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Location = new System.Drawing.Point(135, 97);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 40);
@@ -57,7 +57,7 @@
             this.btnAceptar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnAceptar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnAceptar.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.Location = new System.Drawing.Point(8, 97);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 40);
@@ -69,10 +69,10 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.Location = new System.Drawing.Point(5, 55);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(80, 18);
+            this.lblNombre.Size = new System.Drawing.Size(74, 13);
             this.lblNombre.TabIndex = 2;
             this.lblNombre.Text = "Descripcion";
             // 
@@ -80,10 +80,10 @@
             // 
             this.txbDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txbDescripcion.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txbDescripcion.Location = new System.Drawing.Point(91, 52);
             this.txbDescripcion.Name = "txbDescripcion";
-            this.txbDescripcion.Size = new System.Drawing.Size(223, 23);
+            this.txbDescripcion.Size = new System.Drawing.Size(223, 20);
             this.txbDescripcion.TabIndex = 5;
             // 
             // btnAtras
@@ -91,7 +91,7 @@
             this.btnAtras.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnAtras.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnAtras.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtras.Location = new System.Drawing.Point(250, 97);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(75, 40);
@@ -105,7 +105,7 @@
             this.btnMod.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnMod.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnMod.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnMod.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMod.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMod.Location = new System.Drawing.Point(79, 97);
             this.btnMod.Name = "btnMod";
             this.btnMod.Size = new System.Drawing.Size(91, 40);
@@ -117,20 +117,20 @@
             // lblIDProv
             // 
             this.lblIDProv.AutoSize = true;
-            this.lblIDProv.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIDProv.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIDProv.Location = new System.Drawing.Point(17, 26);
             this.lblIDProv.Name = "lblIDProv";
-            this.lblIDProv.Size = new System.Drawing.Size(68, 18);
+            this.lblIDProv.Size = new System.Drawing.Size(64, 13);
             this.lblIDProv.TabIndex = 9;
             this.lblIDProv.Text = "ID Insumo";
             // 
             // mtbIDInsumo
             // 
-            this.mtbIDInsumo.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtbIDInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.mtbIDInsumo.Location = new System.Drawing.Point(91, 26);
             this.mtbIDInsumo.Mask = "999999999999";
             this.mtbIDInsumo.Name = "mtbIDInsumo";
-            this.mtbIDInsumo.Size = new System.Drawing.Size(79, 23);
+            this.mtbIDInsumo.Size = new System.Drawing.Size(79, 20);
             this.mtbIDInsumo.TabIndex = 11;
             this.mtbIDInsumo.ValidatingType = typeof(int);
             // 
@@ -139,7 +139,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(334, 149);
+            this.ClientSize = new System.Drawing.Size(334, 172);
             this.ControlBox = false;
             this.Controls.Add(this.mtbIDInsumo);
             this.Controls.Add(this.lblIDProv);

@@ -55,6 +55,7 @@
       <Name>DOMINIO</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="script_DB\CREACION_GARCIAS_DB.sql" />
   </ItemGroup>

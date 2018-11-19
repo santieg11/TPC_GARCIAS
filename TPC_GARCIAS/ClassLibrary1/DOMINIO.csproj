@@ -45,7 +45,6 @@
     <Compile Include="COMPRAS.cs" />
     <Compile Include="DatosContacto.cs" />
     <Compile Include="INSUMOS.cs" />
-    <Compile Include="MODULOS.cs" />
     <Compile Include="PedidoVta.cs" />
     <Compile Include="PERSONA.cs" />
     <Compile Include="PRODUCTO.cs" />
@@ -53,11 +52,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PROVEEDORES.cs" />
     <Compile Include="REMITO.cs" />
-    <Compile Include="USUARIO.cs" />
     <Compile Include="VENTAS.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
