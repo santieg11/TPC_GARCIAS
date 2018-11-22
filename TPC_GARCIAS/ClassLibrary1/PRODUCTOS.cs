@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace DOMINIO
 {
-    public class INSUMOS : MATERIAL
+    public class PRODUCTOS : MATERIAL
     {
-        public int intCodInsumo { get; set; }
+        public int intCodProd { get; set; }
+
     }
 }

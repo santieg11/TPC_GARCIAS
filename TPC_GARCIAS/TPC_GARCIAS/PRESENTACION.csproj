@@ -55,6 +55,12 @@
     <Compile Include="frmABMClientes.Designer.cs">
       <DependentUpon>frmABMClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmABMProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmABMProductos.Designer.cs">
+      <DependentUpon>frmABMProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmABMInsumos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,18 @@
     </Compile>
     <Compile Include="frmAltaClientes.Designer.cs">
       <DependentUpon>frmAltaClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIngresoVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIngresoVenta.Designer.cs">
+      <DependentUpon>frmIngresoVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProductos.Designer.cs">
+      <DependentUpon>frmProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmInsumos.cs">
       <SubType>Form</SubType>
@@ -102,6 +120,9 @@
     <EmbeddedResource Include="frmABMClientes.resx">
       <DependentUpon>frmABMClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmABMProductos.resx">
+      <DependentUpon>frmABMProductos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmABMInsumos.resx">
       <DependentUpon>frmABMInsumos.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +131,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAltaClientes.resx">
       <DependentUpon>frmAltaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIngresoVenta.resx">
+      <DependentUpon>frmIngresoVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProductos.resx">
+      <DependentUpon>frmProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInsumos.resx">
       <DependentUpon>frmInsumos.cs</DependentUpon>

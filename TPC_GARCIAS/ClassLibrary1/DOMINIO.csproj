@@ -44,11 +44,11 @@
     <Compile Include="CLIENTES.cs" />
     <Compile Include="COMPRAS.cs" />
     <Compile Include="DatosContacto.cs" />
+    <Compile Include="PRODUCTOS.cs" />
     <Compile Include="INSUMOS.cs" />
     <Compile Include="PedidoVta.cs" />
     <Compile Include="PERSONA.cs" />
-    <Compile Include="PRODUCTO.cs" />
-    <Compile Include="ProdVenta.cs" />
+    <Compile Include="MATERIAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PROVEEDORES.cs" />
     <Compile Include="REMITO.cs" />

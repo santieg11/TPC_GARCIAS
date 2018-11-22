@@ -51,5 +51,12 @@ namespace TPC_GARCIAS
             ventana.Show();
             this.Close();
         }
+
+        private void btnABMProductos_Click(object sender, EventArgs e)
+        {
+            frmABMProductos ventana = new frmABMProductos();
+            ventana.Show();
+            this.Close();
+        }
     }
 }

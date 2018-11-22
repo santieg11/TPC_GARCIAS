@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace DOMINIO
 {
-    public class PRODUCTO
+    public class MATERIAL
     {
         public string strDescripcion { get; set; }
+        public int intGanancia { get; set; }
+        public decimal decValor { get; set; }
         public Nullable<decimal> decValorUltMov { get; set; }
         public Nullable<DateTime> datFechaUltMov { get; set; }
         public DateTime datFechaAlta { get; set; }

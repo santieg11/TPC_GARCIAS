@@ -44,6 +44,7 @@
     <Compile Include="clsConexiones.cs" />
     <Compile Include="ContactosNegocio.cs" />
     <Compile Include="ClientesNegocio.cs" />
+    <Compile Include="ProductosNegocio.cs" />
     <Compile Include="InsumosNegocio.cs" />
     <Compile Include="ProveedoresNegocio.cs" />
     <Compile Include="ComprasNegocio.cs" />
@@ -55,7 +56,6 @@
       <Name>DOMINIO</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="script_DB\CREACION_GARCIAS_DB.sql" />
   </ItemGroup>

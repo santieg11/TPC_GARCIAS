@@ -38,8 +38,8 @@
             this.btnIngresoVenta = new System.Windows.Forms.Button();
             this.btnABMClientes = new System.Windows.Forms.Button();
             this.grbProduccion = new System.Windows.Forms.GroupBox();
-            this.btnStock = new System.Windows.Forms.Button();
             this.btnPedidos = new System.Windows.Forms.Button();
+            this.btnStock = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnABMPerfiles = new System.Windows.Forms.Button();
             this.btnABMUsuarios = new System.Windows.Forms.Button();
@@ -143,6 +143,7 @@
             this.btnABMProductos.TabIndex = 10;
             this.btnABMProductos.Text = "ABM Productos";
             this.btnABMProductos.UseVisualStyleBackColor = true;
+            this.btnABMProductos.Click += new System.EventHandler(this.btnABMProductos_Click);
             // 
             // btnIngresoVenta
             // 
@@ -181,17 +182,6 @@
             this.grbProduccion.TabStop = false;
             this.grbProduccion.Text = "Produccion";
             // 
-            // btnStock
-            // 
-            this.btnStock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnStock.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnStock.Location = new System.Drawing.Point(168, 19);
-            this.btnStock.Name = "btnStock";
-            this.btnStock.Size = new System.Drawing.Size(75, 39);
-            this.btnStock.TabIndex = 9;
-            this.btnStock.Text = "Stock\r\nInsumos";
-            this.btnStock.UseVisualStyleBackColor = true;
-            // 
             // btnPedidos
             // 
             this.btnPedidos.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -202,6 +192,17 @@
             this.btnPedidos.TabIndex = 8;
             this.btnPedidos.Text = "Manejo Pedidos";
             this.btnPedidos.UseVisualStyleBackColor = true;
+            // 
+            // btnStock
+            // 
+            this.btnStock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnStock.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnStock.Location = new System.Drawing.Point(168, 19);
+            this.btnStock.Name = "btnStock";
+            this.btnStock.Size = new System.Drawing.Size(75, 39);
+            this.btnStock.TabIndex = 9;
+            this.btnStock.Text = "Stock\r\nInsumos";
+            this.btnStock.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
