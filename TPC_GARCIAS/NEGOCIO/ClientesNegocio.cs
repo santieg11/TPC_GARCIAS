@@ -10,12 +10,12 @@ namespace NEGOCIO
 {
     public class ClientesNegocio
     {
-        
+
         public IList<CLIENTES> listar()
         {
 
             clsConexiones conexion = new clsConexiones();
-                        
+
             IList<CLIENTES> lista = new List<CLIENTES>();
             CLIENTES aux;
 
@@ -25,16 +25,16 @@ namespace NEGOCIO
                 conexion.setearConsulta("SELECT * from CLIENTES");
                 conexion.abrirConexion();
                 conexion.ejecutarConsulta();
-                
+
                 while (conexion.Lector.Read())
                 {
                     aux = new CLIENTES();
-                                          
+
                     aux.intIDCliente = (int)conexion.Lector["IDCLIENTE"];
-                    aux.strNombre = (string) conexion.Lector["NOMBRE"];
+                    aux.strNombre = (string)conexion.Lector["NOMBRE"];
                     aux.strCuit = (string)conexion.Lector["CUIT"];
                     aux.intIdContacto = (int)conexion.Lector["IDCONTACTO"];
-                    aux.datFechaAlta = (DateTime) conexion.Lector["FECHA_ALTA"];
+                    aux.datFechaAlta = (DateTime)conexion.Lector["FECHA_ALTA"];
 
                     if (conexion.Lector["FECHA_BAJA"] == DBNull.Value)
                         aux.datFechaBaja = null;
@@ -47,13 +47,13 @@ namespace NEGOCIO
                         aux.datUltMod = (DateTime)conexion.Lector["ULT_MOD"];
 
                     aux.intStatus = (int)conexion.Lector["STATUS"];
-                    
-             
+
+
                     lista.Add(aux);
                 }
 
                 return lista;
-                
+
             }
 
             catch (Exception ex)
@@ -66,7 +66,47 @@ namespace NEGOCIO
                 conexion.cerrarConexion();
 
             }
+        }
 
+
+        public IList<CLIENTES> listar_clientes()
+        {
+
+            clsConexiones conexion = new clsConexiones();
+
+            IList<CLIENTES> lista = new List<CLIENTES>();
+            CLIENTES aux;
+
+            try
+            {
+                conexion = new clsConexiones();
+                conexion.setearConsulta("SELECT NOMBRE from CLIENTES");
+                conexion.abrirConexion();
+                conexion.ejecutarConsulta();
+
+                while (conexion.Lector.Read())
+                {
+                    aux = new CLIENTES();
+
+                    aux.strNombre = (string)conexion.Lector["NOMBRE"];
+
+                    lista.Add(aux);
+                }
+
+                return lista;
+
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Lector.Close();
+                conexion.cerrarConexion();
+
+            }
 
         }
 

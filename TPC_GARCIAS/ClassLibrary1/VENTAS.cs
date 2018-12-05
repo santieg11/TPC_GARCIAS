@@ -11,9 +11,10 @@ namespace DOMINIO
         public int intIDVenta { get; set; }
         public DateTime datFechaVta { get; set; }
         public int intIDCliente { get; set; }
-        public int intIDProducto { get; set; }
-        public int intCantVta { get; set; }
         public int intStatus { get; set; }
-        public int intIDUsuario { get; set; }
+        public string strNroFact { get; set; }
+        public Nullable<DateTime> datFechaFact { get; set; }
+        public Nullable<decimal> decMontoFac { get; set; }
+
     }
 }

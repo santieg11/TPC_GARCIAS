@@ -104,6 +104,7 @@
             this.btnIngresoRemito.TabIndex = 6;
             this.btnIngresoRemito.Text = "Ingreso Remito";
             this.btnIngresoRemito.UseVisualStyleBackColor = true;
+            this.btnIngresoRemito.Click += new System.EventHandler(this.btnIngresoRemito_Click);
             // 
             // btnABMProveedores
             // 
@@ -155,6 +156,7 @@
             this.btnIngresoVenta.TabIndex = 8;
             this.btnIngresoVenta.Text = "Ingreso\r\nVenta";
             this.btnIngresoVenta.UseVisualStyleBackColor = true;
+            this.btnIngresoVenta.Click += new System.EventHandler(this.btnIngresoVenta_Click);
             // 
             // btnABMClientes
             // 
@@ -192,6 +194,7 @@
             this.btnPedidos.TabIndex = 8;
             this.btnPedidos.Text = "Manejo Pedidos";
             this.btnPedidos.UseVisualStyleBackColor = true;
+            this.btnPedidos.Click += new System.EventHandler(this.btnPedidos_Click);
             // 
             // btnStock
             // 
@@ -203,6 +206,7 @@
             this.btnStock.TabIndex = 9;
             this.btnStock.Text = "Stock\r\nInsumos";
             this.btnStock.UseVisualStyleBackColor = true;
+            this.btnStock.Click += new System.EventHandler(this.btnStock_Click);
             // 
             // groupBox1
             // 
@@ -229,6 +233,7 @@
             this.btnABMPerfiles.TabIndex = 8;
             this.btnABMPerfiles.Text = "ABM \r\nPerfiles";
             this.btnABMPerfiles.UseVisualStyleBackColor = true;
+            this.btnABMPerfiles.Click += new System.EventHandler(this.btnABMPerfiles_Click);
             // 
             // btnABMUsuarios
             // 
@@ -240,6 +245,7 @@
             this.btnABMUsuarios.TabIndex = 7;
             this.btnABMUsuarios.Text = "ABM\r\nUsuarios";
             this.btnABMUsuarios.UseVisualStyleBackColor = true;
+            this.btnABMUsuarios.Click += new System.EventHandler(this.btnABMUsuarios_Click);
             // 
             // grbReportes
             // 
@@ -267,6 +273,7 @@
             this.btnListadoVentas.TabIndex = 10;
             this.btnListadoVentas.Text = "Listado Ventas";
             this.btnListadoVentas.UseVisualStyleBackColor = true;
+            this.btnListadoVentas.Click += new System.EventHandler(this.btnListadoVentas_Click);
             // 
             // btnListadoCompras
             // 

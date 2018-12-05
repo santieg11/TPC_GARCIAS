@@ -23,14 +23,6 @@ namespace TPC_GARCIAS
             this.Close();
         }
 
-        private void btnListadoCompras_Click(object sender, EventArgs e)
-        {
-            frmListadoCompras ventana = new frmListadoCompras();
-            ventana.Show();
-            this.Close();
-
-        }
-
         private void btnABMProveedores_Click(object sender, EventArgs e)
         {
             frmABMProv ventana = new frmABMProv();
@@ -57,6 +49,53 @@ namespace TPC_GARCIAS
             frmABMProductos ventana = new frmABMProductos();
             ventana.Show();
             this.Close();
+        }
+
+        private void btnIngresoRemito_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnIngresoVenta_Click(object sender, EventArgs e)
+        {
+            frmIngresoVenta ventana = new frmIngresoVenta();
+            ventana.Show();
+            this.Close();
+        }
+
+        private void btnPedidos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnListadoCompras_Click(object sender, EventArgs e)
+        {
+            frmListadoCompras ventana = new frmListadoCompras();
+            ventana.Show();
+            this.Close();
+
+        }
+
+        private void btnListadoVentas_Click(object sender, EventArgs e)
+        {
+            frmListadoVentas ventana = new frmListadoVentas();
+            ventana.Show();
+            this.Close();
+        }
+
+        private void btnStock_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnABMUsuarios_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnABMPerfiles_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
