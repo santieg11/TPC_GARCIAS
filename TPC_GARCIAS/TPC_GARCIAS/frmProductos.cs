@@ -102,7 +102,7 @@ namespace TPC_GARCIAS
             PRODUCTOS datos = new PRODUCTOS();
 
             datos.intCodProd = Convert.ToInt32(mtbIDProd.Text);
-            datos.strDescripcion= txbDescripcion.Text;
+            datos.strDescripcion = txbDescripcion.Text;
             datos.datUltMod = DateTime.Now;
             datos.decValor = Convert.ToInt32(txbValor.Text);
 

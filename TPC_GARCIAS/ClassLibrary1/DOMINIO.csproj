@@ -44,6 +44,7 @@
     <Compile Include="CLIENTES.cs" />
     <Compile Include="COMPRAS.cs" />
     <Compile Include="DatosContacto.cs" />
+    <Compile Include="INGRESOS.cs" />
     <Compile Include="PRODUCTOS.cs" />
     <Compile Include="INSUMOS.cs" />
     <Compile Include="PedidoVta.cs" />
