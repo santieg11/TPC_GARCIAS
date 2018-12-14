@@ -53,7 +53,9 @@ namespace TPC_GARCIAS
 
         private void btnIngresoRemito_Click(object sender, EventArgs e)
         {
-
+            frmIngresoRemito ventana = new frmIngresoRemito();
+            ventana.Show();
+            this.Close();
         }
 
         private void btnIngresoVenta_Click(object sender, EventArgs e)
@@ -85,7 +87,9 @@ namespace TPC_GARCIAS
 
         private void btnStock_Click(object sender, EventArgs e)
         {
-
+            frmListadoStock ventana = new frmListadoStock();
+            ventana.Show();
+            this.Close();
         }
 
         private void btnABMUsuarios_Click(object sender, EventArgs e)

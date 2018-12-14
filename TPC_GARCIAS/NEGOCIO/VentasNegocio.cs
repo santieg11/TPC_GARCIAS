@@ -11,29 +11,32 @@ namespace NEGOCIO
     public class VentasNegocio
     {
 
-        public IList<DetalleVentas> listar()
+        public IList<ListadoVentas> listar()
         {
 
             clsConexiones conexion = new clsConexiones();
 
-            IList<DetalleVentas> lista = new List<DetalleVentas>();
-            DetalleVentas aux;
+            IList<ListadoVentas> lista = new List<ListadoVentas>();
+            ListadoVentas aux;
 
             try
             {
                 conexion = new clsConexiones();
-                conexion.setearConsulta("SELECT V.IDVENTA,V.FECHA_VTA,V.IDCLIENTE,P.IDPEDIDO FROM VENTAS AS V INNER JOIN CLIENTES AS C ON C.IDCLIENTE = V.IDCLIENTE INNER JOIN PEDIDOS AS P ON P.IDVENTA = V.IDVENTA");
+                conexion.setearConsulta("SELECT V.IDVENTA, V.FECHA_VTA, V.IDCLIENTE, C.NOMBRE, P.IDPEDIDO, P.FECHA_ENTREGA_ACORDADA, V.VALOR FROM VENTAS AS V INNER JOIN CLIENTES AS C ON C.IDCLIENTE = V.IDCLIENTE INNER JOIN PEDIDOS AS P ON P.IDVENTA = V.IDVENTA");
                 conexion.abrirConexion();
                 conexion.ejecutarConsulta();
 
                 while (conexion.Lector.Read())
                 {
-                    aux = new DetalleVentas();
+                    aux = new ListadoVentas();
 
-                    aux.intIDVenta = conexion.Lector.GetInt32(0);
+                    aux.intIDVta = conexion.Lector.GetInt32(0);
                     aux.datFechaVta = conexion.Lector.GetDateTime(1);
                     aux.intIDCliente = conexion.Lector.GetInt32(2);
-                    aux.intIdPed = conexion.Lector.GetInt32(6);
+                    aux.strNombreC = conexion.Lector.GetString(3);
+                    aux.intIdPed = conexion.Lector.GetInt32(4);
+                    aux.datFechaEntrega = conexion.Lector.GetDateTime(5);
+                    aux.decValor = conexion.Lector.GetDecimal(6);
 
 
                     lista.Add(aux);
@@ -62,10 +65,12 @@ namespace NEGOCIO
             clsConexiones conexion = new clsConexiones();
             try
             {
-                conexion.setearConsulta("INSERT INTO VENTAS (FECHA_VTA,IDCLIENTE) VALUES (@FECHA,@ID)");
+
+                conexion.setearConsulta("INSERT INTO VENTAS (FECHA_VTA,IDCLIENTE,VALOR) VALUES (@FECHA,@ID,@VAL)");
                 conexion.Comando.Parameters.Clear();
                 conexion.Comando.Parameters.AddWithValue("@FECHA", DateTime.Now);
                 conexion.Comando.Parameters.AddWithValue("@ID",vta.intIDCliente);
+                conexion.Comando.Parameters.AddWithValue("@VAL", vta.decValor);
 
                 conexion.abrirConexion();
                 conexion.ejecutarAccion();
@@ -89,6 +94,7 @@ namespace NEGOCIO
             clsConexiones conexion = new clsConexiones();
             try
             {
+                conexion.abrirConexion();
                 foreach (INGRESOS ing in list)
                     {
 
@@ -98,10 +104,10 @@ namespace NEGOCIO
                     conexion.Comando.Parameters.AddWithValue("@PROD", ing.intcod);
                     conexion.Comando.Parameters.AddWithValue("@CANT", ing.intcantidad);
                     conexion.Comando.Parameters.AddWithValue("@VAL", ing.decValorIng);
-
-                    conexion.abrirConexion();
                     conexion.ejecutarAccion();
-                    }
+                }
+
+
             }
             catch (Exception ex)
             {
@@ -122,6 +128,7 @@ namespace NEGOCIO
             clsConexiones conexion = new clsConexiones();
             try
             {
+
                 conexion.setearConsulta("INSERT INTO PEDIDOS (IDVENTA,FECHA_PEDIDO,FECHA_ENTREGA_ACORDADA,FECHA_ENTREGA_REAL,[STATUS]) VALUES (@IDVTA,@FECHA,@FECHA_ACO,@FECHA_ENT,1)");
                 conexion.Comando.Parameters.Clear();
                 conexion.Comando.Parameters.AddWithValue("@IDVTA",id);

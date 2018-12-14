@@ -45,6 +45,8 @@
     <Compile Include="COMPRAS.cs" />
     <Compile Include="DatosContacto.cs" />
     <Compile Include="DetalleCompras.cs" />
+    <Compile Include="ListadoStock.cs" />
+    <Compile Include="ListadoVentas.cs" />
     <Compile Include="STOCK.cs" />
     <Compile Include="INGRESOS.cs" />
     <Compile Include="DetallePedido.cs" />

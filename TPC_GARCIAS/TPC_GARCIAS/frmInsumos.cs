@@ -37,7 +37,7 @@ namespace TPC_GARCIAS
 
                 mtbIDInsumo.Text = id.intCodInsumo.ToString();
                 txbDescripcion.Text = datos.strDescripcion;
-
+                
                 if (tipo == 'v')
                 {
                     txbDescripcion.ReadOnly = true;
@@ -74,6 +74,7 @@ namespace TPC_GARCIAS
             try
             {
                 datos.strDescripcion = txbDescripcion.Text;
+                datos.decValor = Convert.ToInt32(mtbValor.Text);
                 conectar.alta(datos);
 
                 MessageBox.Show("Insumo creado exitosamente");
@@ -100,6 +101,7 @@ namespace TPC_GARCIAS
             datos.intCodInsumo = Convert.ToInt32(mtbIDInsumo.Text);
             datos.strDescripcion= txbDescripcion.Text;
             datos.datUltMod = DateTime.Now;
+            datos.decValor = Convert.ToInt32(mtbValor.Text);
 
 
             conectar.modificar(datos);

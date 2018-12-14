@@ -8,9 +8,9 @@ namespace DOMINIO
 {
     public class DetalleCompras : COMPRAS
     {
-        public int intIdProd { get; set; }
+        public int intIdInsumo { get; set; }
+        public string strDesc { get; set; }
         public int intCantidad { get; set; }
         public decimal decValor { get; set; }
-        public int intIdPed { get; set; }
     }
 }

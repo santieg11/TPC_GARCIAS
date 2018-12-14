@@ -37,7 +37,16 @@ namespace TPC_GARCIAS
             try
             {
                 dgvListadoVentas.DataSource = ventas.listar();
-                
+                dgvListadoVentas.AutoResizeColumns();
+                dgvListadoVentas.Columns[0].HeaderText = "ID Venta";
+                dgvListadoVentas.Columns[1].HeaderText = "Fecha Venta";
+                dgvListadoVentas.Columns[2].HeaderText = "ID Cliente";
+                dgvListadoVentas.Columns[3].HeaderText = "Nombre";
+                dgvListadoVentas.Columns[4].HeaderText = "ID Pedido";
+                dgvListadoVentas.Columns[5].HeaderText = "Fecha Entrega";
+                dgvListadoVentas.Columns[6].HeaderText = "Valor";
+
+
 
             }
             catch (Exception ex)

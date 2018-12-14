@@ -213,6 +213,12 @@ namespace TPC_GARCIAS
                 }
             }
 
+            foreach(INGRESOS ing in listaI)
+            {
+                vta.decValor += ing.decValorIng;
+            }
+
+
             try
             {
                 conexionV.grabarVenta(vta);

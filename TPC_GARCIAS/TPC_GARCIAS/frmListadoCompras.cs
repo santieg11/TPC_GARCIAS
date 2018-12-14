@@ -37,7 +37,12 @@ namespace TPC_GARCIAS
             try
             {
                 dgvListadoCompras.DataSource = comp.listar();
-                
+                dgvListadoCompras.Columns[0].HeaderText = "Id Compra";
+                dgvListadoCompras.Columns[1].HeaderText = "Id Prov";
+                dgvListadoCompras.Columns[2].Visible = false;
+                dgvListadoCompras.Columns[3].HeaderText = "Fecha Compra";
+                dgvListadoCompras.Columns[4].HeaderText = "Valor";
+                dgvListadoCompras.Columns[5].HeaderText = "Nro Remito";
 
             }
             catch (Exception ex)

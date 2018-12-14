@@ -32,7 +32,7 @@ namespace NEGOCIO
                                           
                     aux.intCodInsumo = (int)conexion.Lector["IDINSUMO"];
                     aux.strDescripcion = (string) conexion.Lector["DESCRIPCION"];
-                    aux.decValorUltMov = (decimal)conexion.Lector["VALOR_ULT_COMPRA"];
+                    aux.decValor = (decimal)conexion.Lector["VALOR"];
                     
                     if (conexion.Lector["FECHA_ULT_COMPRA"] == DBNull.Value)
                         aux.datFechaBaja = null;
@@ -79,12 +79,13 @@ namespace NEGOCIO
             clsConexiones conexion = new clsConexiones();
             try
             {
-                conexion.setearConsulta("UPDATE INSUMOS SET DESCRIPCION=@DESC, ULT_MOD=@MOD WHERE IDINSUMO=@ID");
+                conexion.setearConsulta("UPDATE INSUMOS SET DESCRIPCION=@DESC, ULT_MOD=@MOD, VALOR=@VAL WHERE IDINSUMO=@ID");
 
                 conexion.Comando.Parameters.Clear();
                 conexion.Comando.Parameters.AddWithValue("@ID", insu.intCodInsumo);
                 conexion.Comando.Parameters.AddWithValue("@DESC", insu.strDescripcion);
                 conexion.Comando.Parameters.AddWithValue("@MOD", DateTime.Now);
+                conexion.Comando.Parameters.AddWithValue("@VAL", insu.decValor);
 
                 conexion.abrirConexion();
                 conexion.ejecutarAccion();
@@ -111,10 +112,10 @@ namespace NEGOCIO
             clsConexiones conexion = new clsConexiones();
             try
             {
-                conexion.setearConsulta("insert into INSUMOS (DESCRIPCION, VALOR_ULT_COMPRA, FECHA_ULT_COMPRA, FECHA_ALTA, FECHA_BAJA, ULT_MOD, STATUS) values (@DESC, @VAL_ULT_C, @F_ULT_C, @FECHA_ALTA, @FECHA_BAJA, @ULT_MOD, 1)");
+                conexion.setearConsulta("insert into INSUMOS (DESCRIPCION, VALOR, FECHA_ULT_COMPRA, FECHA_ALTA, FECHA_BAJA, ULT_MOD, STATUS) values (@DESC, @VAL, @F_ULT_C, @FECHA_ALTA, @FECHA_BAJA, @ULT_MOD, 1)");
                 conexion.Comando.Parameters.Clear();
                 conexion.Comando.Parameters.AddWithValue("@DESC", nuevo.strDescripcion);
-                conexion.Comando.Parameters.AddWithValue("@VAL_ULT_C", 0);
+                conexion.Comando.Parameters.AddWithValue("@VAL", nuevo.decValor);
                 conexion.Comando.Parameters.AddWithValue("@F_ULT_C", DBNull.Value);
                 conexion.Comando.Parameters.AddWithValue("@FECHA_ALTA", DateTime.Now);
                 conexion.Comando.Parameters.AddWithValue("@FECHA_BAJA", DBNull.Value);
@@ -195,7 +196,7 @@ namespace NEGOCIO
 
                 aux.intCodInsumo = (int)conexion.Lector["IDINSUMO"];
                 aux.strDescripcion = (string)conexion.Lector["DESCRIPCION"];
-                aux.decValorUltMov = (decimal)conexion.Lector["VALOR_ULT_COMPRA"];
+                aux.decValor = (decimal)conexion.Lector["VALOR"];
                 aux.datFechaUltMov = (DateTime)conexion.Lector["FECHA_ULT_COMPRA"];
                 aux.datFechaAlta = (DateTime)conexion.Lector["FECHA_ALTA"];
 
@@ -224,6 +225,49 @@ namespace NEGOCIO
                 conexion.cerrarConexion();
 
             }
+        }
+
+        public IList<ListadoStock> listaS()
+        {
+
+            clsConexiones conexion = new clsConexiones();
+
+            IList<ListadoStock> lista = new List<ListadoStock>();
+            ListadoStock aux;
+
+            try
+            {
+                conexion = new clsConexiones();
+                conexion.setearConsulta("SELECT * FROM STOCK");
+                conexion.abrirConexion();
+                conexion.ejecutarConsulta();
+
+                while (conexion.Lector.Read())
+                {
+                    aux = new ListadoStock();
+
+                    aux.intIDMATERIAL = conexion.Lector.GetInt32(0);
+                    aux.strDESCRIPCION= conexion.Lector.GetString(1);
+                    aux.intCANTIDAD= conexion.Lector.GetInt32(2);
+
+                    lista.Add(aux);
+                }
+
+                return lista;
+
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Lector.Close();
+                conexion.cerrarConexion();
+
+            }
+
         }
 
 

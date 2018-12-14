@@ -39,26 +39,15 @@ namespace TPC_GARCIAS
                 dgvProductos.DataSource = prod.listar();
                 dgvProductos.Columns[0].HeaderText = "ID Producto";
                 dgvProductos.Columns[1].HeaderText = "Descripcion";
-                dgvProductos.Columns[2].HeaderText = "% Ganancia";
-                dgvProductos.Columns[3].HeaderText = "Valor";
-                dgvProductos.Columns[4].HeaderText = "Valor Ult. Venta";
-                dgvProductos.Columns[5].HeaderText = "Fecha Ult. Venta";
-                dgvProductos.Columns[6].HeaderText = "Fecha Alta";
-                dgvProductos.Columns[7].HeaderText = "Fecha Baja";
-                dgvProductos.Columns[8].HeaderText = "Ult Modificacion";
-                dgvProductos.Columns[9].HeaderText = "Status";
+                dgvProductos.Columns[2].HeaderText = "Valor";
+                dgvProductos.Columns[3].HeaderText = "Fecha Ult. Venta";
+                dgvProductos.Columns[4].HeaderText = "Fecha Alta";
+                dgvProductos.Columns[5].HeaderText = "Fecha Baja";
+                dgvProductos.Columns[6].HeaderText = "Ult Modificacion";
+                dgvProductos.Columns[7].HeaderText = "Status";
 
-                dgvProductos.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvProductos.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvProductos.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvProductos.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvProductos.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvProductos.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvProductos.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvProductos.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvProductos.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvProductos.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
+                dgvProductos.AutoResizeColumns();
+                
             }
             catch (Exception ex)
             {

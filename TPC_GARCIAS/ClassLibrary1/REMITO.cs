@@ -8,7 +8,6 @@ namespace DOMINIO
 {
     public class REMITO : COMPRAS
     {
-        public string strNroRemito { get; set; }
         public int intCodInsumo { get; set; }
         public int intCantidad { get; set; }
     }

@@ -37,24 +37,17 @@ namespace TPC_GARCIAS
             try
             {
                 dgvInsumos.DataSource = insu.listar();
+                
                 dgvInsumos.Columns[0].HeaderText = "ID Insumo";
                 dgvInsumos.Columns[1].HeaderText = "Descripcion";
-                dgvInsumos.Columns[2].HeaderText = "Valor Ult. Compra";
+                dgvInsumos.Columns[2].HeaderText = "Valor";
                 dgvInsumos.Columns[3].HeaderText = "Fecha Ult. Compra";
                 dgvInsumos.Columns[4].HeaderText = "Fecha Alta";
                 dgvInsumos.Columns[5].HeaderText = "Fecha Baja";
                 dgvInsumos.Columns[6].HeaderText = "Ult Modificacion";
                 dgvInsumos.Columns[7].HeaderText = "Status";
 
-                dgvInsumos.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvInsumos.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvInsumos.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvInsumos.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvInsumos.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvInsumos.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvInsumos.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvInsumos.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
+                dgvInsumos.AutoResizeColumns();
             }
             catch (Exception ex)
             {

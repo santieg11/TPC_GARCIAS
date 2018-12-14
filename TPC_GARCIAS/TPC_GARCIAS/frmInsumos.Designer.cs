@@ -36,6 +36,8 @@
             this.btnMod = new System.Windows.Forms.Button();
             this.lblIDProv = new System.Windows.Forms.Label();
             this.mtbIDInsumo = new System.Windows.Forms.MaskedTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.mtbValor = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -44,7 +46,7 @@
             this.btnCancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(135, 97);
+            this.btnCancelar.Location = new System.Drawing.Point(135, 129);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 40);
             this.btnCancelar.TabIndex = 0;
@@ -58,7 +60,7 @@
             this.btnAceptar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.Location = new System.Drawing.Point(8, 97);
+            this.btnAceptar.Location = new System.Drawing.Point(8, 129);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 40);
             this.btnAceptar.TabIndex = 1;
@@ -92,7 +94,7 @@
             this.btnAtras.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtras.Location = new System.Drawing.Point(250, 97);
+            this.btnAtras.Location = new System.Drawing.Point(250, 129);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(75, 40);
             this.btnAtras.TabIndex = 7;
@@ -106,7 +108,7 @@
             this.btnMod.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnMod.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnMod.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMod.Location = new System.Drawing.Point(79, 97);
+            this.btnMod.Location = new System.Drawing.Point(79, 129);
             this.btnMod.Name = "btnMod";
             this.btnMod.Size = new System.Drawing.Size(91, 40);
             this.btnMod.TabIndex = 8;
@@ -134,13 +136,35 @@
             this.mtbIDInsumo.TabIndex = 11;
             this.mtbIDInsumo.ValidatingType = typeof(int);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(43, 81);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(36, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Valor";
+            // 
+            // mtbValor
+            // 
+            this.mtbValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.mtbValor.Location = new System.Drawing.Point(91, 81);
+            this.mtbValor.Mask = "999999999999";
+            this.mtbValor.Name = "mtbValor";
+            this.mtbValor.Size = new System.Drawing.Size(79, 20);
+            this.mtbValor.TabIndex = 14;
+            this.mtbValor.ValidatingType = typeof(int);
+            // 
             // frmInsumos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(334, 172);
+            this.ClientSize = new System.Drawing.Size(334, 204);
             this.ControlBox = false;
+            this.Controls.Add(this.mtbValor);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.mtbIDInsumo);
             this.Controls.Add(this.lblIDProv);
             this.Controls.Add(this.btnMod);
@@ -167,5 +191,7 @@
         private System.Windows.Forms.Button btnMod;
         private System.Windows.Forms.Label lblIDProv;
         private System.Windows.Forms.MaskedTextBox mtbIDInsumo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MaskedTextBox mtbValor;
     }
 }

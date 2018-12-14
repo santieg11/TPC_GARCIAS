@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace DOMINIO
 {
-    public class VENTAS
+    public class ListadoVentas
     {
-        public int intIDVenta { get; set; }
+        public int intIDVta { get; set; }
         public DateTime datFechaVta { get; set; }
         public int intIDCliente { get; set; }
+        public string strNombreC { get; set; }
+        public int intIdPed { get; set; }
+        public DateTime datFechaEntrega { get; set; }
         public decimal decValor { get; set; }
-        
     }
 }
