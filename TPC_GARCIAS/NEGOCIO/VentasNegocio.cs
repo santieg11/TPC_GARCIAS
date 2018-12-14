@@ -10,76 +10,22 @@ namespace NEGOCIO
 {
     public class VentasNegocio
     {
-        /*
-        public IList<COMPRAS> listar()
-        {
-            //conexion
-            SqlConnection conexion = new SqlConnection();
-            //sentencia
-            SqlCommand comando = new SqlCommand();
-            //objeto de recepcion
-            SqlDataReader lector;
-            //lista
-            IList<COMPRAS> lista = new List<COMPRAS>();
-            COMPRAS aux;
-
-            try
-            {
-                conexion.ConnectionString = @"data source =.\SQLEXPRESS; initial catalog= GARCIAS_DB; integrated security=sspi";
-                comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT *, P.NOMBRE FROM COMPRAS AS C left join PROVEEDORES AS P ON P.IDPROV = C.CODPROV";
-                comando.Connection = conexion;
-                conexion.Open();
-                lector = comando.ExecuteReader();
-
-                while (lector.Read())
-                {
-                    aux = new COMPRAS();
-                                        
-                    aux.intIDCompra = (int)lector["IDCOMPRA"];
-                    aux.intIDProv = (int)lector["CODPROV"];
-                    aux.strNomProv = (string)lector["NOMBRE"];
-                    aux.datFechaCompra = (DateTime)lector["FECHA_COMPRA"];
-                    aux.dmlValorCompra = decimal.Round((decimal)lector["VALOR_COMPRA"],2);
-                    aux.strNroFactura = (string)lector["NRODOCUMENTO"];
-
-                    lista.Add(aux);
-                }
-
-                return lista;
-
-            }
-
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                //lector.Close();
-                lector = null;
-                conexion.Close();
-            }
-
-
-        }
-        */
 
         public IList<DetalleVentas> listar()
         {
 
             clsConexiones conexion = new clsConexiones();
-                        
+
             IList<DetalleVentas> lista = new List<DetalleVentas>();
             DetalleVentas aux;
 
             try
             {
                 conexion = new clsConexiones();
-                conexion.setearConsulta("SELECT V.IDVENTA,V.FECHA_VTA,V.IDCLIENTE,V.NROFACTURA,V.FECHA_FACTURA,V.MONTO_FACTURA,P.IDPEDIDO FROM VENTAS AS V INNER JOIN CLIENTES AS C ON C.IDCLIENTE = V.IDCLIENTE INNER JOIN PEDIDOS AS P ON P.IDVENTA = V.IDVENTA");
+                conexion.setearConsulta("SELECT V.IDVENTA,V.FECHA_VTA,V.IDCLIENTE,P.IDPEDIDO FROM VENTAS AS V INNER JOIN CLIENTES AS C ON C.IDCLIENTE = V.IDCLIENTE INNER JOIN PEDIDOS AS P ON P.IDVENTA = V.IDVENTA");
                 conexion.abrirConexion();
                 conexion.ejecutarConsulta();
-                
+
                 while (conexion.Lector.Read())
                 {
                     aux = new DetalleVentas();
@@ -87,22 +33,6 @@ namespace NEGOCIO
                     aux.intIDVenta = conexion.Lector.GetInt32(0);
                     aux.datFechaVta = conexion.Lector.GetDateTime(1);
                     aux.intIDCliente = conexion.Lector.GetInt32(2);
-
-                    //if (string.IsNullOrEmpty(conexion.Lector.GetString(3)))
-                    //    aux.strNroFact = null;
-                    //else
-                    //    aux.strNroFact = conexion.Lector.GetString(3);
-
-                    if (Convert.IsDBNull(conexion.Lector.GetDateTime(4)))
-                        aux.datFechaFact = null;
-                    else
-                        aux.datFechaFact = conexion.Lector.GetDateTime(4);
-
-                    if (Convert.IsDBNull(conexion.Lector.GetDecimal(5)))
-                        aux.decMontoFac = null;
-                    else
-                        aux.decMontoFac = conexion.Lector.GetDecimal(5);
-
                     aux.intIdPed = conexion.Lector.GetInt32(6);
 
 
@@ -126,5 +56,122 @@ namespace NEGOCIO
 
 
         }
+
+        public void grabarVenta(VENTAS vta)
+        {
+            clsConexiones conexion = new clsConexiones();
+            try
+            {
+                conexion.setearConsulta("INSERT INTO VENTAS (FECHA_VTA,IDCLIENTE) VALUES (@FECHA,@ID)");
+                conexion.Comando.Parameters.Clear();
+                conexion.Comando.Parameters.AddWithValue("@FECHA", DateTime.Now);
+                conexion.Comando.Parameters.AddWithValue("@ID",vta.intIDCliente);
+
+                conexion.abrirConexion();
+                conexion.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conexion != null)
+                    conexion.cerrarConexion();
+            }
+        }
+
+        public void grabarDetalleVta(IList<INGRESOS> list)
+        {
+            int id;
+
+            id = consultarIDVta();
+            clsConexiones conexion = new clsConexiones();
+            try
+            {
+                foreach (INGRESOS ing in list)
+                    {
+
+                    conexion.setearConsulta("INSERT INTO DETALLE_VENTAS (IDVENTA,PRODUCTO,CANTIDAD,VALOR) VALUES (@IDVTA,@PROD,@CANT,@VAL)");
+                    conexion.Comando.Parameters.Clear();
+                    conexion.Comando.Parameters.AddWithValue("@IDVTA", id);
+                    conexion.Comando.Parameters.AddWithValue("@PROD", ing.intcod);
+                    conexion.Comando.Parameters.AddWithValue("@CANT", ing.intcantidad);
+                    conexion.Comando.Parameters.AddWithValue("@VAL", ing.decValorIng);
+
+                    conexion.abrirConexion();
+                    conexion.ejecutarAccion();
+                    }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conexion != null)
+                    conexion.cerrarConexion();
+            }
+        }
+
+        public void grabarPedido(DateTime entrega)
+        {
+            int id;
+
+            id = consultarIDVta();
+            clsConexiones conexion = new clsConexiones();
+            try
+            {
+                conexion.setearConsulta("INSERT INTO PEDIDOS (IDVENTA,FECHA_PEDIDO,FECHA_ENTREGA_ACORDADA,FECHA_ENTREGA_REAL,[STATUS]) VALUES (@IDVTA,@FECHA,@FECHA_ACO,@FECHA_ENT,1)");
+                conexion.Comando.Parameters.Clear();
+                conexion.Comando.Parameters.AddWithValue("@IDVTA",id);
+                conexion.Comando.Parameters.AddWithValue("@FECHA",DateTime.Now);
+                conexion.Comando.Parameters.AddWithValue("@FECHA_ACO",entrega);
+                conexion.Comando.Parameters.AddWithValue("@FECHA_ENT",DBNull.Value);
+
+                conexion.abrirConexion();
+                conexion.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conexion != null)
+                    conexion.cerrarConexion();
+            }
+        }
+
+
+        public int consultarIDVta()
+        {
+            int aux;
+            clsConexiones conexion = new clsConexiones();
+            try
+            {
+                conexion.setearConsulta("SELECT TOP 1 IDVENTA from VENTAS ORDER BY IDVENTA DESC");
+
+                conexion.abrirConexion();
+                conexion.ejecutarConsulta();
+
+                conexion.Lector.Read();
+
+                aux = (int)conexion.Lector["IDVENTA"];
+
+                return aux;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                conexion.Lector.Close();
+                conexion.cerrarConexion();
+
+            }
+        }
     }
-}
+}  

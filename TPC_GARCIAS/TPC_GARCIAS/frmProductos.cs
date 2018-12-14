@@ -39,12 +39,10 @@ namespace TPC_GARCIAS
                 mtbIDProd.Text = id.intCodProd.ToString();
                 txbDescripcion.Text = datos.strDescripcion;
                 txbValor.Text = datos.decValor.ToString();
-                mtbGanancia.Text = datos.intGanancia.ToString();
 
                 if (tipo == 'v')
                 {
                     txbDescripcion.ReadOnly = true;
-                    mtbGanancia.ReadOnly = true;
 
                     btnMod.Hide();
                 }

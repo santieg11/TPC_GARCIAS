@@ -86,7 +86,6 @@ namespace NEGOCIO
 
                     aux.intIDCompra = (int)conexion.Lector["IDCOMPRA"];
                     aux.intIDProv = (int)conexion.Lector["CODPROV"];
-                    aux.strNomProv = (string)conexion.Lector["NOMBRE"];
                     aux.datFechaCompra = (DateTime)conexion.Lector["FECHA_COMPRA"];
                     aux.dmlValorCompra = decimal.Round((decimal)conexion.Lector["VALOR_COMPRA"], 2);
                     aux.strNroFactura = (string)conexion.Lector["NRODOCUMENTO"];

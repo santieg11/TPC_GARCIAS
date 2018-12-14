@@ -32,9 +32,7 @@ namespace NEGOCIO
                                           
                     aux.intCodProd = (int)conexion.Lector["IDPROD"];
                     aux.strDescripcion = (string) conexion.Lector["DESCRIPCION"];
-                    aux.intGanancia = (int)conexion.Lector["GANANCIA"];
                     aux.decValor = (decimal)conexion.Lector["VALOR"];
-                    aux.decValorUltMov = (decimal)conexion.Lector["VALOR_ULT_VTA"];
                     
                     if (conexion.Lector["FECHA_ULT_VTA"] == DBNull.Value)
                         aux.datFechaBaja = null;
@@ -81,13 +79,13 @@ namespace NEGOCIO
             clsConexiones conexion = new clsConexiones();
             try
             {
-                conexion.setearConsulta("UPDATE PRODUCTOS SET DESCRIPCION=@DESC, GANANCIA=@GAN, ULT_MOD=@MOD WHERE IDPROD=@ID");
+                conexion.setearConsulta("UPDATE PRODUCTOS SET DESCRIPCION=@DESC, VALOR=@VAL, ULT_MOD=@MOD WHERE IDPROD=@ID");
 
                 conexion.Comando.Parameters.Clear();
                 conexion.Comando.Parameters.AddWithValue("@ID", prod.intCodProd);
                 conexion.Comando.Parameters.AddWithValue("@DESC", prod.strDescripcion);
-                conexion.Comando.Parameters.AddWithValue("@GAN", prod.intGanancia);
                 conexion.Comando.Parameters.AddWithValue("@MOD", DateTime.Now);
+                conexion.Comando.Parameters.AddWithValue("@VAL", prod.decValor);
 
                 conexion.abrirConexion();
                 conexion.ejecutarAccion();
@@ -114,10 +112,9 @@ namespace NEGOCIO
             clsConexiones conexion = new clsConexiones();
             try
             {
-                conexion.setearConsulta("insert into PRODUCTOS (DESCRIPCION, GANANCIA, VALOR, VALOR_ULT_VTA, FECHA_ULT_VTA, FECHA_ALTA, FECHA_BAJA, ULT_MOD, STATUS) values (@DESC, @GAN, @VAL, @VAL_ULT_V, @F_ULT_V, @FECHA_ALTA, @FECHA_BAJA, @ULT_MOD, 1)");
+                conexion.setearConsulta("insert into PRODUCTOS (DESCRIPCION, VALOR, VALOR_ULT_VTA, FECHA_ULT_VTA, FECHA_ALTA, FECHA_BAJA, ULT_MOD, STATUS) values (@DESC, @GAN, @VAL, @VAL_ULT_V, @F_ULT_V, @FECHA_ALTA, @FECHA_BAJA, @ULT_MOD, 1)");
                 conexion.Comando.Parameters.Clear();
                 conexion.Comando.Parameters.AddWithValue("@DESC", nuevo.strDescripcion);
-                conexion.Comando.Parameters.AddWithValue("@GAN", nuevo.intGanancia);
                 conexion.Comando.Parameters.AddWithValue("@VAL", nuevo.decValor);
                 conexion.Comando.Parameters.AddWithValue("@VAL_ULT_V", 0);
                 conexion.Comando.Parameters.AddWithValue("@F_ULT_V", DBNull.Value);
@@ -200,7 +197,6 @@ namespace NEGOCIO
 
                 aux.intCodProd = (int)conexion.Lector["IDPROD"];
                 aux.strDescripcion = (string)conexion.Lector["DESCRIPCION"];
-                aux.intGanancia = (int)conexion.Lector["GANANCIA"];
                 aux.decValor = (decimal)conexion.Lector["VALOR"];
                 aux.decValorUltMov = (decimal)conexion.Lector["VALOR_ULT_VTA"];
                 aux.datFechaUltMov = (DateTime)conexion.Lector["FECHA_ULT_VTA"];

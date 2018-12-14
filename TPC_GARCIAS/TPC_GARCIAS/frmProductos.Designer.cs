@@ -36,9 +36,6 @@
             this.btnMod = new System.Windows.Forms.Button();
             this.lblIDProd = new System.Windows.Forms.Label();
             this.mtbIDProd = new System.Windows.Forms.MaskedTextBox();
-            this.mtbGanancia = new System.Windows.Forms.MaskedTextBox();
-            this.lblGanancia = new System.Windows.Forms.Label();
-            this.lblporcentaje = new System.Windows.Forms.Label();
             this.lblValor = new System.Windows.Forms.Label();
             this.txbValor = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -139,36 +136,6 @@
             this.mtbIDProd.TabIndex = 11;
             this.mtbIDProd.ValidatingType = typeof(int);
             // 
-            // mtbGanancia
-            // 
-            this.mtbGanancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.mtbGanancia.Location = new System.Drawing.Point(286, 78);
-            this.mtbGanancia.Mask = "999";
-            this.mtbGanancia.Name = "mtbGanancia";
-            this.mtbGanancia.Size = new System.Drawing.Size(28, 20);
-            this.mtbGanancia.TabIndex = 13;
-            this.mtbGanancia.ValidatingType = typeof(int);
-            // 
-            // lblGanancia
-            // 
-            this.lblGanancia.AutoSize = true;
-            this.lblGanancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGanancia.Location = new System.Drawing.Point(219, 81);
-            this.lblGanancia.Name = "lblGanancia";
-            this.lblGanancia.Size = new System.Drawing.Size(61, 13);
-            this.lblGanancia.TabIndex = 12;
-            this.lblGanancia.Text = "Ganancia";
-            // 
-            // lblporcentaje
-            // 
-            this.lblporcentaje.AutoSize = true;
-            this.lblporcentaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblporcentaje.Location = new System.Drawing.Point(320, 81);
-            this.lblporcentaje.Name = "lblporcentaje";
-            this.lblporcentaje.Size = new System.Drawing.Size(16, 13);
-            this.lblporcentaje.TabIndex = 14;
-            this.lblporcentaje.Text = "%";
-            // 
             // lblValor
             // 
             this.lblValor.AutoSize = true;
@@ -198,9 +165,6 @@
             this.ControlBox = false;
             this.Controls.Add(this.txbValor);
             this.Controls.Add(this.lblValor);
-            this.Controls.Add(this.lblporcentaje);
-            this.Controls.Add(this.mtbGanancia);
-            this.Controls.Add(this.lblGanancia);
             this.Controls.Add(this.mtbIDProd);
             this.Controls.Add(this.lblIDProd);
             this.Controls.Add(this.btnMod);
@@ -227,9 +191,6 @@
         private System.Windows.Forms.Button btnMod;
         private System.Windows.Forms.Label lblIDProd;
         private System.Windows.Forms.MaskedTextBox mtbIDProd;
-        private System.Windows.Forms.MaskedTextBox mtbGanancia;
-        private System.Windows.Forms.Label lblGanancia;
-        private System.Windows.Forms.Label lblporcentaje;
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.TextBox txbValor;
     }

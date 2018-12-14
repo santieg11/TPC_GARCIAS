@@ -10,7 +10,6 @@ namespace DOMINIO
     {
         public int intIDCompra { get; set; }
         public int intIDProv { get; set; }
-        public string strNomProv { get; set; }
         public DateTime datFechaCompra { get; set; }
         public decimal dmlValorCompra { get; set; }
         public string strNroFactura { get; set; }

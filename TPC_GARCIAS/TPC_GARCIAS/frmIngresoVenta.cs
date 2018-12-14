@@ -79,18 +79,22 @@ namespace TPC_GARCIAS
             {
                 dgvDetalleVta.AutoResizeColumns();
 
+                dgvDetalleVta.Columns["strDescripcion"].DisplayIndex = 1;
+                dgvDetalleVta.Columns["decValor"].DisplayIndex = 2;
+
                 dgvDetalleVta.Columns[0].HeaderText = "Cod Prod";
                 dgvDetalleVta.Columns[1].HeaderText = "Cantidad";
                 dgvDetalleVta.Columns[2].HeaderText = "Valor Total";
                 dgvDetalleVta.Columns[3].HeaderText = "Producto";
-                dgvDetalleVta.Columns[4].Visible = false;
-                dgvDetalleVta.Columns[5].HeaderText = "Valor Unitario";
+                dgvDetalleVta.Columns[4].HeaderText = "Valor Unitario";
+                dgvDetalleVta.Columns[5].Visible = false;
                 dgvDetalleVta.Columns[6].Visible = false;
                 dgvDetalleVta.Columns[7].Visible = false;
                 dgvDetalleVta.Columns[8].Visible = false;
                 dgvDetalleVta.Columns[9].Visible = false;
                 dgvDetalleVta.Columns[10].Visible = false;
-                dgvDetalleVta.Columns[11].Visible = false;
+                
+
             }
             catch (Exception ex)
             {
@@ -183,6 +187,46 @@ namespace TPC_GARCIAS
             }
 
             reload();
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            cmbClientes.Text = null;
+            cmbProducto.Text = null;
+            listaI.Clear();
+            dtpFechaEntrega.Value = DateTime.Now;
+            txbCantidad.Text = null;
+            reload();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            VentasNegocio conexionV = new VentasNegocio();
+            VENTAS vta = new VENTAS();
+
+            foreach (CLIENTES cliente in listaC)
+            {
+                if(cliente.strNombre == cmbClientes.Text)
+                {
+                    vta.intIDCliente = cliente.intIDCliente;
+                }
+            }
+
+            try
+            {
+                conexionV.grabarVenta(vta);
+                conexionV.grabarDetalleVta(listaI);
+                conexionV.grabarPedido(dtpFechaEntrega.Value);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            MessageBox.Show("Venta generada correctamente");
+           
 
         }
     }

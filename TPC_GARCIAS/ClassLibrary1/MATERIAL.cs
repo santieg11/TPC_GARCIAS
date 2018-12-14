@@ -9,7 +9,6 @@ namespace DOMINIO
     public class MATERIAL
     {
         public string strDescripcion { get; set; }
-        public int intGanancia { get; set; }
         public decimal decValor { get; set; }
         public Nullable<decimal> decValorUltMov { get; set; }
         public Nullable<DateTime> datFechaUltMov { get; set; }
