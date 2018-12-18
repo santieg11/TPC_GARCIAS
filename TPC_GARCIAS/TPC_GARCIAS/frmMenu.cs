@@ -67,7 +67,9 @@ namespace TPC_GARCIAS
 
         private void btnPedidos_Click(object sender, EventArgs e)
         {
-
+            //frmManejoPedidos ventana = new frmManejoPedidos();
+            //ventana.Show();
+            //this.Close();
         }
 
         private void btnListadoCompras_Click(object sender, EventArgs e)

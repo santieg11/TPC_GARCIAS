@@ -63,7 +63,6 @@ namespace TPC_GARCIAS
             dgvDetalleIng.DataSource = listaI;
             try
             {
-                dgvDetalleIng.AutoResizeColumns();
 
                 dgvDetalleIng.Columns[0].HeaderText = "Cod Prod";
                 dgvDetalleIng.Columns[1].HeaderText = "Cantidad";
@@ -77,7 +76,7 @@ namespace TPC_GARCIAS
                 dgvDetalleIng.Columns[9].Visible = false;
                 dgvDetalleIng.Columns[10].Visible = false;
 
-
+                dgvDetalleIng.AutoResizeColumns();
             }
             catch (Exception ex)
             {

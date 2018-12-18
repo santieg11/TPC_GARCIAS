@@ -106,6 +106,12 @@
     <Compile Include="frmIngresoVenta.Designer.cs">
       <DependentUpon>frmIngresoVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmManejoPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManejoPedidos.Designer.cs">
+      <DependentUpon>frmManejoPedidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmListadoStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmIngresoVenta.resx">
       <DependentUpon>frmIngresoVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManejoPedidos.resx">
+      <DependentUpon>frmManejoPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListadoStock.resx">
       <DependentUpon>frmListadoStock.cs</DependentUpon>
