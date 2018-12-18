@@ -26,22 +26,24 @@ namespace TPC_GARCIAS
             this.Close();
         }
 
-        private void frmListadoCompras_Load(object sender, EventArgs e)
-        {
-            cargar();
-        }
-
         private void cargar()
         {
             PedidosNegocio ped = new PedidosNegocio();
             try
             {
                 dgvPedidos.DataSource = ped.listar();
-                dgvPedidos.Columns[0].HeaderText = "ID Venta";
-                dgvPedidos.Columns[1].HeaderText = "Fecha Pedido";
-                dgvPedidos.Columns[2].HeaderText = "Entrega Acordada";
-                dgvPedidos.Columns[3].HeaderText = "Entrega Real";
-                dgvPedidos.Columns[4].HeaderText = "Status";
+
+                dgvPedidos.Columns["intIDVenta"].DisplayIndex = 1;
+                dgvPedidos.Columns["datFechaVta"].DisplayIndex = 2;
+                
+                dgvPedidos.Columns[0].HeaderText = "ID Pedido";
+                dgvPedidos.Columns[1].HeaderText = "Entrega Acordada";
+                dgvPedidos.Columns[2].HeaderText = "Entrega Real";
+                dgvPedidos.Columns[3].HeaderText = "Status";
+                dgvPedidos.Columns[4].HeaderText = "ID Venta";
+                dgvPedidos.Columns[5].HeaderText = "Fecha Pedido";
+                dgvPedidos.Columns[6].Visible = false;
+                dgvPedidos.Columns[7].Visible = false;
 
                 dgvPedidos.AutoResizeColumns();
 

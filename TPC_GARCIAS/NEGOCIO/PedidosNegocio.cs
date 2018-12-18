@@ -30,12 +30,14 @@ namespace NEGOCIO
                 {
                     aux = new PedidoVta();
 
-                    //aux.intIDVenta = conexion.Lector.GetInt32(0);
-                    aux.intIDVenta = conexion.Lector.GetInt32(0);
-                    aux.datFechaVta = conexion.Lector.GetDateTime(1);
-                    aux.datEntregaAcordada = conexion.Lector.GetDateTime(2);
-                    aux.datEntregaReal = conexion.Lector.GetDateTime(3);
-                    aux.intStatusPedido = conexion.Lector.GetInt32(4);
+                    aux.intNroPedido = conexion.Lector.GetInt32(0);
+                    aux.intIDVenta = conexion.Lector.GetInt32(1);
+                    aux.datFechaVta = conexion.Lector.GetDateTime(2);
+                    aux.datEntregaAcordada = conexion.Lector.GetDateTime(3);
+                    if (conexion.Lector["FECHA_ENTREGA_REAL"] == DBNull.Value)
+                        aux.datEntregaReal = null;
+
+                    aux.intStatusPedido = conexion.Lector.GetInt32(5);  
 
                     lista.Add(aux);
                 }

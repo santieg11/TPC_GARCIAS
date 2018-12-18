@@ -76,7 +76,7 @@ namespace NEGOCIO
             clsConexiones conexion = new clsConexiones();
             try
             {
-                conexion.setearConsulta("UPDATE PROVEEDORES SET NOMBRE=@NOMBRE, CUIT=@CUIT, ULT_MOD=@MOD WHERE IDCONTACTO=@ID ");
+                conexion.setearConsulta("UPDATE PROVEEDORES SET NOMBRE=@NOMBRE, CUIT=@CUIT, ULT_MOD=@MOD WHERE IDPROV=@ID ");
 
                 conexion.Comando.Parameters.Clear();
                 conexion.Comando.Parameters.AddWithValue("@ID", prov.intIDProv);
