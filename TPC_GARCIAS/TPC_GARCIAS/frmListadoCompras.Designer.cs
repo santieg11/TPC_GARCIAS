@@ -30,7 +30,8 @@
         {
             this.dgvListadoCompras = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.btnDetalle = new System.Windows.Forms.Button();
+            this.txbBuscar = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoCompras)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,10 +44,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvListadoCompras.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.dgvListadoCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListadoCompras.Location = new System.Drawing.Point(12, 12);
+            this.dgvListadoCompras.Location = new System.Drawing.Point(12, 39);
             this.dgvListadoCompras.Name = "dgvListadoCompras";
             this.dgvListadoCompras.ReadOnly = true;
-            this.dgvListadoCompras.Size = new System.Drawing.Size(645, 210);
+            this.dgvListadoCompras.Size = new System.Drawing.Size(645, 183);
             this.dgvListadoCompras.TabIndex = 0;
             // 
             // btnSalir
@@ -60,15 +61,22 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // btnDetalle
+            // txbBuscar
             // 
-            this.btnDetalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDetalle.Location = new System.Drawing.Point(501, 228);
-            this.btnDetalle.Name = "btnDetalle";
-            this.btnDetalle.Size = new System.Drawing.Size(75, 23);
-            this.btnDetalle.TabIndex = 2;
-            this.btnDetalle.Text = "Ver detalle";
-            this.btnDetalle.UseVisualStyleBackColor = true;
+            this.txbBuscar.Location = new System.Drawing.Point(108, 10);
+            this.txbBuscar.Name = "txbBuscar";
+            this.txbBuscar.Size = new System.Drawing.Size(150, 20);
+            this.txbBuscar.TabIndex = 3;
+            this.txbBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Buscar nro remito";
             // 
             // frmListadoCompras
             // 
@@ -77,7 +85,8 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(669, 263);
-            this.Controls.Add(this.btnDetalle);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txbBuscar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.dgvListadoCompras);
             this.MinimumSize = new System.Drawing.Size(685, 302);
@@ -86,6 +95,7 @@
             this.Load += new System.EventHandler(this.frmListadoCompras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoCompras)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -93,6 +103,7 @@
 
         private System.Windows.Forms.DataGridView dgvListadoCompras;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button btnDetalle;
+        private System.Windows.Forms.TextBox txbBuscar;
+        private System.Windows.Forms.Label label1;
     }
 }

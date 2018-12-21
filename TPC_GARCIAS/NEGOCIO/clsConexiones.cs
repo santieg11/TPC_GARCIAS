@@ -93,7 +93,18 @@ namespace NEGOCIO
             }
         }
 
-
+        public int ejecutarAccionReturn()
+        {
+            try
+            {
+                comando.Connection = conexion;
+                return (int)comando.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
     }
 }

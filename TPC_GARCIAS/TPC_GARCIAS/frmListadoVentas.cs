@@ -55,6 +55,25 @@ namespace TPC_GARCIAS
             }
         }
 
+        private void txbBuscar_TextChanged(object sender, EventArgs e)
+        {
+            
+                VentasNegocio vent = new VentasNegocio();
+                List<ListadoVentas> listaV = new List<ListadoVentas>();
+                listaV = (List<ListadoVentas>)vent.listar();
 
+                if (txbBuscar.Text == "")
+                {
+
+                    dgvListadoVentas.DataSource = listaV;
+                }
+                else
+                {
+                    List<ListadoVentas> lista;
+                    lista = listaV.FindAll(venta => venta.strNombreC.Contains(txbBuscar.Text));
+                    dgvListadoVentas.DataSource = lista;
+                }
+            
+        }
     }
 }

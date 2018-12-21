@@ -34,9 +34,11 @@ namespace TPC_GARCIAS
         private void cargar()
         {
             ComprasNegocio comp = new ComprasNegocio();
+            IList<COMPRAS> compra = new List<COMPRAS>();
             try
             {
-                dgvListadoCompras.DataSource = comp.listar();
+                compra = comp.listar();
+                dgvListadoCompras.DataSource = compra;
                 dgvListadoCompras.Columns[0].HeaderText = "Id Compra";
                 dgvListadoCompras.Columns[1].HeaderText = "Id Prov";
                 dgvListadoCompras.Columns[2].Visible = false;
@@ -48,6 +50,25 @@ namespace TPC_GARCIAS
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            ComprasNegocio comp = new ComprasNegocio();
+            List<COMPRAS> listaC = new List<COMPRAS>();
+            listaC = (List<COMPRAS>)comp.listar();
+
+            if (txbBuscar.Text == "")
+            {
+
+                dgvListadoCompras.DataSource = listaC;
+            }
+            else
+            {
+                List<COMPRAS> lista;
+                lista = listaC.FindAll(compra => compra.strNroRemito.Contains(txbBuscar.Text));
+                dgvListadoCompras.DataSource = lista;
             }
         }
     }

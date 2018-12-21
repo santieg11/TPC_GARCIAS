@@ -31,6 +31,8 @@
             this.dgvListadoVentas = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnDetalle = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txbBuscar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoVentas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,10 +45,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvListadoVentas.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.dgvListadoVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListadoVentas.Location = new System.Drawing.Point(12, 12);
+            this.dgvListadoVentas.Location = new System.Drawing.Point(12, 32);
             this.dgvListadoVentas.Name = "dgvListadoVentas";
             this.dgvListadoVentas.ReadOnly = true;
-            this.dgvListadoVentas.Size = new System.Drawing.Size(685, 158);
+            this.dgvListadoVentas.Size = new System.Drawing.Size(685, 138);
             this.dgvListadoVentas.TabIndex = 0;
             // 
             // btnSalir
@@ -70,6 +72,23 @@
             this.btnDetalle.Text = "Ver detalle";
             this.btnDetalle.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Buscar Cliente";
+            // 
+            // txbBuscar
+            // 
+            this.txbBuscar.Location = new System.Drawing.Point(105, 6);
+            this.txbBuscar.Name = "txbBuscar";
+            this.txbBuscar.Size = new System.Drawing.Size(150, 20);
+            this.txbBuscar.TabIndex = 5;
+            this.txbBuscar.TextChanged += new System.EventHandler(this.txbBuscar_TextChanged);
+            // 
             // frmListadoVentas
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -77,6 +96,8 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(709, 211);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txbBuscar);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.dgvListadoVentas);
@@ -86,6 +107,7 @@
             this.Load += new System.EventHandler(this.frmListadoVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoVentas)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -94,5 +116,7 @@
         private System.Windows.Forms.DataGridView dgvListadoVentas;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnDetalle;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txbBuscar;
     }
 }

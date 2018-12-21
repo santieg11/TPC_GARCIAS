@@ -58,5 +58,16 @@ namespace TPC_GARCIAS
         {
             cargar();
         }
+
+        private void btnDetalle_Click(object sender, EventArgs e)
+        {
+            PedidoVta id;
+            id = (PedidoVta)dgvPedidos.CurrentRow.DataBoundItem;
+
+            frmPedidos ventana = new frmPedidos(id);
+            ventana.Show();
+            this.Close();
+
+        }
     }
 }

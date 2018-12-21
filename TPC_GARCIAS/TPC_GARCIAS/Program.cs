@@ -16,9 +16,9 @@ namespace TPC_GARCIAS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            frmMenu menu = new frmMenu();
-            menu.FormClosed += MainForm_Closed;
-            menu.Show();
+            frmLogin log = new frmLogin();
+            log.FormClosed += MainForm_Closed;
+            log.Show();
             Application.Run();
         }
         private static void MainForm_Closed(object sender, FormClosedEventArgs e)
